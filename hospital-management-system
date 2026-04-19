@@ -315,3 +315,491 @@ Once all information has been entered:
 2. Click **Complete** (green button) to mark the consultation as done. This will move the patient's status to "Complete" in the Today List and update the Dashboard counters accordingly.
 
 ---
+# Chapter 3: Appointment
+
+The **Appointment** module allows staff to schedule, view, manage, and track patient appointments for all doctors. Access it by clicking **Appointment** in the left sidebar.
+
+---
+
+## 3.1 Appointment Screen Overview
+
+The main Appointment screen contains the following key areas:
+
+| Element | Description |
+|---|---|
+| **Refresh** | Reloads the appointment list with the latest data |
+| **+ New Appointment** | Opens the form to create a new appointment |
+| **Doctor's Register** | Opens the doctor attendance/register log |
+| **Date Selector (top bar)** | A horizontal scrollable calendar — click any date to view appointments for that day. The current/selected date is highlighted in dark |
+| **All Appointment / All doctors selected** | Filter panel — click to narrow results to a specific doctor |
+| **Available Doctors and Appointment Charges** | Shows active doctors with their consultation charge (e.g., *Test Doctor | 2000.00*). Badge number shows count of appointments |
+| **Search by Phone number** | Search field to quickly find a patient's appointment by phone |
+| **Waiting List** | View patients currently on the waiting list |
+| **Download CSV** | Export the current appointment list as a spreadsheet file |
+
+---
+
+## 3.2 Appointment Status Tabs
+
+Below the search bar, appointments are filtered by status tabs:
+
+| Tab | What It Shows |
+|---|---|
+| **All** | Every appointment for the selected date |
+| **Pending** | Appointments not yet acted upon |
+| **Online** | Appointments booked through an online channel |
+| **Attend** | Patients who have arrived at the clinic |
+| **Paid** | Appointments where payment has been received |
+| **Complete** | Fully completed appointments |
+| **Cancel** | Cancelled appointments |
+
+---
+
+## 3.3 Appointment List Columns
+
+Each appointment row in the list displays:
+
+| Column | Description |
+|---|---|
+| **ID** | Unique appointment ID number |
+| **Doctor** | The assigned doctor's name |
+| **C. Name** | Customer (patient) name |
+| **C. Phone** | Customer phone number |
+| **Ap. Date** | Scheduled appointment date |
+| **Ap. Time** | Scheduled appointment time |
+| **Status** | Current status badge (e.g., Revisit, Pending, Complete) |
+| **Note** | Any notes added to the appointment |
+| **Create at** | Date and time the appointment was created |
+| **Payment** | The consultation fee amount |
+| **Paid** | Payment status — **Not Paid** (red) or **Paid** (green) |
+| **Details** | Click **View** to open the full appointment details popup |
+
+---
+
+## 3.4 Viewing Appointment Details
+
+Click **View** in the Details column to open the **Appointment Details** popup. This shows a full breakdown of the appointment:
+
+### Appointment Data
+- **Appointment ID** — Unique reference number
+- **Created at** — Timestamp of when the appointment was created
+- **Created user** — The staff member who created it
+
+### Customer
+- **Customer ID**, **Name**, and **Phone**
+
+### Schedule
+- **Date** — The appointment date
+- **Time** — The appointment time
+
+### Doctor
+- **Name** — Assigned doctor
+- **Title** — Doctor's specialisation (e.g., *Aesthetic Physician*)
+
+### Billing
+- **Payment** — The amount due (e.g., LKR 2000)
+- **Payment Type** — Whether payment is collected *Before* or *After* the consultation
+- **Bill ID** — Payment status badge (*Not Paid* / *Paid*)
+
+### Status
+- **Status** — Current appointment status (e.g., *revisit*)
+- **Note** — Editable notes field. Click **Edit** to add or modify a note.
+- **View Logs** — Click to see a full activity log for this appointment
+
+### Action Buttons (bottom of popup)
+
+| Button | Action |
+|---|---|
+| **Mark the patient as attend** (blue) | Marks the patient as arrived at the clinic |
+| **Send to waiting list** (green) | Moves the patient to the waiting queue |
+| **Change Date** (black) | Reschedules the appointment to a new date |
+| **Cancel Appointment** (orange) | Cancels the appointment |
+
+---
+
+## 3.5 Creating a New Appointment
+
+Click **+ New Appointment** (top right) to open the **New Appointment** form.
+
+### Step 1 — Doctor & Queue Info
+The form shows:
+- The **assigned doctor** name and title (e.g., *Test Doctor — Aesthetic Physician*)
+- The **Queue number** auto-assigned for the selected day
+- The **Customer date** field auto-fills with today's date
+
+### Step 2 — Select a Date
+Use the **calendar on the left** to pick the appointment date. Click the **◀ ▶** arrows to navigate between months. The current date is circled in blue. Dates shown in red are Sundays or holidays.
+
+### Step 3 — Select a Time Slot
+The centre panel shows two tabs:
+- **Default Time** — Pre-configured time slots set up in the doctor's schedule
+- **Flex Schedule** — Flexible or custom time slots. If no schedule is configured, it will show *"No schedule found"*
+
+Click on an available time slot to select it.
+
+### Step 4 — Add a Note (Optional)
+Click the **Note** dropdown at the top to add any remarks about the appointment.
+
+### Step 5 — Select the Patient
+On the right panel under **Customer Information**:
+- Search by **Phone** or **User ID**
+- Use **ID Scan** to scan the patient's ID
+- Click **Add new** to register a new patient
+- Press **F8** or click **EMPTY CUSTOMER ENTRY** to clear the form
+
+### Step 6 — Confirm
+Once a date, time, and patient are all selected, click **Make Appointment** (top right, activates when all fields are filled) to save the appointment.
+
+---
+
+## 3.6 Doctor's Register
+
+Click **Doctor's Register** (blue button, top right of the Appointment screen) to open the doctor attendance register popup.
+
+### Mark Register Tab
+This tab is used to record a doctor's arrival for a specific day:
+
+| Column | Description |
+|---|---|
+| **Date** | The date of the register entry |
+| **Time** | The time the entry was recorded |
+| **Status** | Attendance status — **Not Arrived** (red) or **Arrived** |
+| **Room** | Enter the room number the doctor will be using |
+| **Update** | Click to save the room number or update the record |
+| **Send Notify SMS** | Sends an SMS notification to relevant parties about the doctor's status |
+
+Use the **date picker** at the top right to view or mark the register for a specific date.
+
+### All Register Tab
+This tab shows a full historical attendance log for all doctors within a date range:
+
+1. Set the **Start date** and **End date** using the date pickers.
+2. Click **Load Data** to retrieve the records.
+
+The results table shows:
+
+| Column | Description |
+|---|---|
+| **Name** | Doctor's name |
+| **Status** | Arrival status — **Not Arrived** (red) / **Arrived** (green) |
+| **Date** | The date of the record |
+| **Time** | Time recorded |
+| **Room No** | Room assigned to the doctor |
+| **Notify SMS** | Whether the notification SMS was sent — **Notify Not Sent** (red) or sent (green) |
+| **Arrived SMS** | Whether the arrival SMS was sent — **Arrived SMS Not Sent** (red) or sent (green) |
+
+> **Tip:** Use the All Register tab to audit doctor attendance and SMS notification history across any date range.
+
+---
+
+# Chapter 4: Appointment Management
+
+The **Appointment Management** module is a dedicated workspace for managing the live patient queue and waiting list for a doctor's session. It bridges the gap between scheduled appointments and active consultations. Access it by clicking **App. Management** in the left sidebar.
+
+---
+
+## 4.1 Appointment Management Screen Overview
+
+When you open the module, you will see:
+
+| Element | Description |
+|---|---|
+| **Doctor Name & Title** | Displays the active doctor (e.g., *Test Doctor — Aesthetic Physician*) |
+| **Token No** | Shows the current active token number. Use **◀ ▶** arrows to navigate between tokens |
+| **Waiting List** | A panel showing patients currently in the waiting queue for this doctor |
+
+When no patients are in the queue, the Waiting List area will be empty. Once patients are sent to the waiting list (from the Appointment module), they will appear here.
+
+---
+
+## 4.2 Waiting List Popup
+
+Click on the **Waiting List** panel or header to open the **Waiting List popup** for the active doctor and today's date (e.g., *Waiting List | Test Doctor | 2026-04-19*).
+
+The list is indexed by Appointment ID and shows:
+
+| Column | Description |
+|---|---|
+| **Que** | The queue position number |
+| **App. ID** | The appointment's unique ID |
+| **C. Name** | The patient's name |
+| **C. Phone** | The patient's phone number |
+| **Status** | Current status badge — **Waiting** (blue) |
+| **Mark Complete** | Click to mark this patient's appointment as completed without opening the full record |
+| **Open** | Click to open the full consultation record for this patient |
+
+> **Tip:** Use **Mark Complete** for quick administrative closures. Use **Open** when the doctor needs to record clinical notes, prescriptions, or services.
+
+---
+
+## 4.3 Opening a Patient Record from the Waiting List
+
+Clicking **Open** on a waiting list entry loads the full consultation workspace within the Appointment Management screen. This is functionally identical to the OPD consultation view, and displays:
+
+### Patient Header Bar
+At the top of the screen, a summary header shows key appointment details at a glance:
+
+| Field | Description |
+|---|---|
+| **Patient Name** | The patient's full name (e.g., *Mr. Layan*) |
+| **Customer Data** | Link to view or edit the patient's profile |
+| **App ID** | The appointment reference ID |
+| **Date Time** | Scheduled date and time of the appointment |
+| **Bill ID** | Current billing/payment status (e.g., *Not paid*) |
+| **Status** | Current status (e.g., *waiting*) |
+| **Mark Complete** | Green button — click to mark the consultation as complete |
+| **Save** | Orange button — saves the current record without completing |
+
+### Token Navigation
+The **Token No** at the top left updates to the current patient's token (e.g., Token 1). Use the **◀ ▶** arrows to move between patients in the queue.
+
+---
+
+## 4.4 Consultation Record
+
+Once a patient is opened from the waiting list, the full consultation form becomes available. This includes the same tabs and fields as the OPD module:
+
+### Acvilas AI Panel
+The **Acvilas AI** panel appears at the top of the workspace, providing an AI-generated clinical summary for the loaded patient. Click to expand it for details or type a question in the Ask field.
+
+### Items Table
+Displays all services, products, and prescriptions added to this visit with columns for Item, Detail, Ref., Price, Discount, Total, and Option. Use **Make template** to save the current item set as a reusable template. Use **Clear All Items** to remove everything.
+
+### Prescription Tab
+Fill in the clinical consultation fields:
+
+| Field | Purpose |
+|---|---|
+| **Past Medical History** | Patient's known background conditions |
+| **Presenting Complaint** | Reason for today's visit |
+| **Allergies** | Known drug or other allergies |
+| **Treatments** | Treatment plan for this visit |
+
+Use the **Outside Prescription** table below to add medications with Drug Name, Qty, Dosage, Frequency, and Days, then click **Add**.
+
+Use **Attachments** to upload files and **Print** to print the prescription.
+
+### Services Tab
+Add billable clinical services to the visit. Search by name, title, or code and click **Add** next to the relevant service.
+
+### Templates Tab
+Load a previously saved consultation template to auto-fill common service and prescription combinations.
+
+### Products Tab
+Dispense pharmacy products. Search by generic name, code, or product name and click **Add** to include items in the bill.
+
+### Patient History Button
+Click **Patient History** (top of the consultation area) to view the full historical record of this patient's previous visits and consultations.
+
+---
+
+## 4.5 Completing a Consultation from Appointment Management
+
+Once the consultation is documented:
+
+1. Click **Save** (orange) to save progress without closing the record.
+2. Click **Mark Complete** (green, in the header bar) to finalize the consultation. This updates the appointment status to *Complete* and removes the patient from the Waiting List.
+
+---
+
+# Chapter 5: Customers
+
+The **Customers** module is the central patient records database. It allows staff to search for any patient, view and edit their personal profile, and access their complete history of appointments, invoices, and medical reports — all in one place. Access it by clicking **Customers** in the left sidebar.
+
+---
+
+## 5.1 Customers Screen Overview
+
+When you first open the Customers module, you will see a clean screen with a single **Search phone number** field in the top right corner. The system requires a phone number search to locate a patient record.
+
+---
+
+## 5.2 Searching for a Customer
+
+1. Click the **Search phone number** field at the top right of the screen.
+2. Type the patient's phone number (e.g., *763778282*).
+3. The system will display all registered names linked to that phone number as clickable badges (e.g., *Mr. Layan*, *Mr. layan 5*).
+4. Click the patient name badge you wish to open.
+
+> **Note:** Multiple records can share the same phone number. Always verify the correct record by checking the name before opening.
+
+---
+
+## 5.3 Customer Profile Page
+
+Once a patient is selected, their full profile page loads. This page is divided into four main sections.
+
+---
+
+### Section 1 — Personal Information
+
+A numbered list of the patient's profile fields, each with an **Edit** button to update that specific field:
+
+| # | Field | Description |
+|---|---|---|
+| 1 | **Name** | Patient's full name |
+| 2 | **Phone** | Contact phone number |
+| 3 | **Address** | Home or contact address |
+| 4 | **ID Number** | National ID or other identification number |
+| 5 | **Weight** | Patient's body weight |
+| 6 | **Age** | Patient's age |
+| 7 | **City** | City of residence |
+| 8 | **Ethnicity** | Patient's ethnicity |
+| 9 | **Sex** | Patient's gender |
+
+At the bottom of this section, click **Print Barcode** to generate and print a barcode label for the patient's physical record or file.
+
+To edit any field, click the **Edit** button next to it, make your changes, and save.
+
+---
+
+### Section 2 — Reports
+
+On the right side of the profile (next to Personal Information), the **Reports** panel shows all medical/lab reports linked to this patient.
+
+Each report row shows:
+
+| Column | Description |
+|---|---|
+| **Service Name** | The type of service/test ordered (e.g., Abdominal Scan) |
+| **Sub Div** | The subdivision or sub-category of the service |
+| **Code** | The service billing code |
+| **Ref. To** | Referral destination if applicable |
+| **Ref. Name** | Name of the referring doctor or entity |
+| **Status** | Current report status — **Pending** (orange) or **Completed** (green) |
+| **Options** | Click **View** to open the full report details |
+
+Click **Refresh** (next to the Reports heading) to reload and update the report list.
+
+---
+
+### Section 3 — Appointments
+
+Below the personal information section, the full **Appointments history** table lists every appointment this patient has ever had:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **ID** | Appointment ID |
+| **Doctor** | The doctor seen |
+| **Customer** | Patient name |
+| **Phone** | Patient phone |
+| **Date** | Appointment date |
+| **Time** | Appointment time |
+| **Status** | Status badge (Waiting, Pending, Complete, etc.) |
+| **Created** | Timestamp of when the appointment was created |
+| **Payment** | Payment status badge (Paid / Not Paid) |
+| **Details** | Click **View** to open the full appointment details popup |
+
+Click **Refresh** (next to the Appointments heading) to reload the list.
+
+---
+
+### Section 4 — Invoice
+
+At the bottom of the customer profile page, the full **Invoice history** table lists every billing transaction for this patient:
+
+| Column | Description |
+|---|---|
+| **Invoice** | Invoice number |
+| **C. Name** | Customer name |
+| **C. Phone** | Customer phone |
+| **Cashier** | The POS/cashier ID used (e.g., POS0001) |
+| **Operator** | The staff member who processed the payment (e.g., ADMIN) |
+| **Total** | Total amount billed |
+| **Created at** | Date and time the invoice was generated |
+| **Option** | Click **View** to open the full invoice |
+
+---
+
+## 5.4 Editing Customer Information
+
+To update any detail in the patient's profile:
+
+1. Locate the field you wish to change in the Personal Information section.
+2. Click the **Edit** button on the right side of that row.
+3. A text input will appear — enter the updated information.
+4. Confirm/save the change.
+
+> **Tip:** Keep patient records up to date, especially phone numbers, as the phone number is the primary search key used across OPD, Appointments, and Cashier modules.
+
+---
+
+## 5.5 Printing a Patient Barcode
+
+At the bottom of the Personal Information section, click **Print Barcode** to print a barcode label for the patient. This barcode can be attached to physical files, prescriptions, or sample labels and scanned using the **ID Scan** feature in OPD or Appointment modules for fast record retrieval.
+
+---
+
+# Chapter 6: Time Table
+
+The **Time Table** module provides a weekly calendar view of all doctors' schedules, showing their available session times for each day. It helps staff quickly see when each doctor is available and manage scheduling. Access it by clicking **Time Table** in the left sidebar.
+
+---
+
+## 6.1 Time Table Screen Overview
+
+The screen displays a **weekly grid** titled **Doctors Time Table**, with doctors listed as rows and days of the week as columns.
+
+---
+
+## 6.2 Week Navigation
+
+At the top of the screen:
+
+| Button | Action |
+|---|---|
+| **◀ Previous Week** | Moves the calendar back to the previous week |
+| **Next Week ▶** | Moves the calendar forward to the next week |
+
+The column headers show each day of the week with its full date (e.g., *Sunday 19-04-2026*, *Monday 20-04-2026*, etc.), so you always know exactly which dates you are viewing.
+
+---
+
+## 6.3 Schedule Type Buttons
+
+At the top centre of the screen, three colour-coded buttons indicate the types of schedules that may appear in the timetable:
+
+| Button | Colour | Meaning |
+|---|---|---|
+| **Flex Schedule** | Blue | Flexible/custom time slots set for specific dates |
+| **Normal Schedule** | Green | Regular recurring weekly schedule slots |
+| **Notes** | Pink/Red | Notes or special remarks attached to a schedule entry |
+
+These act as a legend to help you identify the nature of each time slot shown on the grid.
+
+---
+
+## 6.4 Reading the Timetable Grid
+
+The grid is organised as follows:
+
+- **Rows** — Each row represents one doctor. The left column shows the doctor's name and their consultation fee (e.g., *Test Doctor — Fee: LKR 2000*). The row background is highlighted in yellow for easy identification.
+- **Columns** — Each column represents a day of the week with its specific date.
+- **Cells** — Where a doctor has a scheduled session on a given day, a **green time slot badge** appears in that cell showing the session start time (e.g., *07:36 PM*, *12:49 AM*, *02:35 PM*). Empty cells mean the doctor has no session scheduled for that day.
+
+In the example shown, *Test Doctor* has sessions scheduled on Sunday, Wednesday, and Saturday of the current week, with no sessions on Monday, Tuesday, Thursday, or Friday.
+
+---
+
+## 6.5 Interpreting Schedule Information
+
+| Element | What It Tells You |
+|---|---|
+| **Doctor Name** | Which doctor the row belongs to |
+| **Fee** | The consultation charge for that doctor (displayed in LKR) |
+| **Green time badge** | The doctor is available at that time on that day |
+| **Empty cell** | The doctor has no session on that day |
+
+---
+
+## 6.6 Tips for Using the Time Table
+
+- Use the Time Table to **confirm doctor availability** before creating a new appointment in the Appointment module.
+- If a time slot shows as a **Flex Schedule** (blue), that session was added as a one-off and may not repeat the following week.
+- **Normal Schedule** slots (green) recur weekly as part of the doctor's standard working pattern.
+- Use the **Notes** indicator (pink) to check for any special instructions or exceptions attached to a session, such as a session being shortened or moved.
+- Navigate using **Previous Week** and **Next Week** to plan ahead or review past schedules.
+
+---
+
