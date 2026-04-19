@@ -803,3 +803,1329 @@ In the example shown, *Test Doctor* has sessions scheduled on Sunday, Wednesday,
 
 ---
 
+# Chapter 7: Cashier
+
+The **Cashier** module manages the clinic's point-of-sale (POS) billing counters. It is where payments are collected, invoices are processed, and financial balance sheets are reviewed. Access it by clicking **Cashier** in the left sidebar.
+
+---
+
+## 7.1 Cashier Points Screen Overview
+
+When you open the Cashier module, you will see the **Cashier Points** screen. This lists all configured cashier/POS terminals in the clinic.
+
+At the top of the screen:
+- **Cashier Points** — The page title
+- **Refresh** — Click to reload the list of cashier points with the latest data
+
+---
+
+## 7.2 Cashier Points List
+
+Each row in the list represents one cashier terminal:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Cashier Code** | The unique system code for this cashier terminal (e.g., *POS0001*) |
+| **Cashier Name** | The friendly name given to this cashier point (e.g., *Main Cashier*) |
+| **Option** | Action buttons for this cashier point |
+
+---
+
+## 7.3 Cashier Options
+
+Each cashier point has two action buttons in the Options column:
+
+### Edit
+Click the **Edit** badge (dark, next to the cashier name) to rename or update the settings of that cashier point.
+
+### Open POS
+Click **Open POS** to launch the full Point of Sale billing screen for that cashier terminal. This is where staff will:
+- Search for a patient by phone number or ID
+- View outstanding balances on consultations, services, and products
+- Process payments and generate invoices
+- Apply discounts
+- Issue receipts
+
+> **Tip:** Always open the correct POS terminal assigned to your workstation to ensure transactions are recorded under the right cashier code.
+
+### Balance Sheet
+Click **Balance Sheet** to open the financial summary for that cashier point. The balance sheet shows:
+- Total collections for a given period
+- Breakdown of payments received
+- Opening and closing cash balances
+- Any discrepancies or outstanding amounts
+
+This is used by supervisors and administrators to reconcile daily cash at the end of each shift or day.
+
+---
+
+## 7.4 Managing Multiple Cashier Points
+
+If your clinic has more than one billing counter (e.g., a front desk cashier and a pharmacy counter), each will appear as a separate row in this list with its own unique POS code. Each cashier point operates independently, allowing simultaneous billing at different counters without conflict.
+
+---
+
+## 7.5 Best Practices for Cashier Use
+
+- Always click **Refresh** at the start of your shift to ensure you are seeing the most current cashier list.
+- Use the **Balance Sheet** at the end of each day to verify that all transactions have been recorded correctly.
+- Only authorised staff with cashier permissions should have access to **Open POS** to ensure financial accountability.
+- Each transaction processed through the POS is automatically linked to the patient's invoice history, which can be reviewed in the **Customers** module.
+
+---
+
+# Chapter 8: Service Task
+
+The **Service Task** module tracks all clinical service tasks (such as lab tests and scans) that have been ordered for patients. It allows staff to monitor task status, update progress, upload results, and manage lab reports. Access it by clicking **Service Task** in the left sidebar.
+
+---
+
+## 8.1 Service Task Screen Overview
+
+The top of the screen has two department tabs:
+
+| Tab | Description |
+|---|---|
+| **LAB** | Laboratory service tasks (e.g., blood tests, scans) |
+| **OPT** | Other paramedical or optical service tasks |
+
+Click the relevant tab to view tasks for that department.
+
+---
+
+## 8.2 Task Type Tabs
+
+Within each department tab, there are two sub-tabs:
+
+| Sub-tab | Description |
+|---|---|
+| **Tasks** | All regular service tasks generated from patient invoices |
+| **Temporary Tasks** | Ad-hoc or manually created tasks not linked to a standard invoice |
+
+Click **Refresh** next to the Service Tasks heading to reload the list with the latest data.
+
+---
+
+## 8.3 Service Tasks List
+
+The Tasks list shows all service tasks in a table with the following columns:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **ID** | Unique task ID |
+| **Inv. No** | The invoice number this task was generated from |
+| **Service Name** | The name of the service ordered (e.g., *Abdominal Scan*) |
+| **Subtitle** | The specific sub-type of the service |
+| **Customer Name** | The patient's name |
+| **Customer Phone** | The patient's phone number |
+| **Code** | The service billing code |
+| **Ref To** | Who the task is referred to (e.g., a specialist or department) |
+| **Ref. Name** | The name of the referral recipient |
+| **Status** | Current task status — **Pending** (grey) or **Completed** (green) |
+| **Time Stamp** | Date and time the task was created |
+| **Options** | Click **View** to open the full task details |
+
+---
+
+## 8.4 Viewing Task Details
+
+Click **View** in the Options column to open the **Task Details** popup. This popup is divided into two panels.
+
+---
+
+### Left Panel — Task Details & Billing
+
+**Task Details section** shows:
+
+| Field | Description |
+|---|---|
+| **Service Name** | The ordered service (e.g., Abdominal Scan) |
+| **Subtitle** | Sub-category of the service |
+| **Code** | Service billing code |
+| **Customer Name** | Patient's name |
+| **Customer Phone** | Patient's phone number |
+| **Created Time** | When the task was generated |
+| **SMS Notification** | Shows whether an SMS was sent — **Task Not Completed** badge appears in red if the task is still pending |
+| **Status** | Current status with a **Change Status** button to update it |
+| **URL** | A direct shareable link to this task record. Click **Copy** to copy the URL for sharing |
+
+**Billing Details section** shows the invoice information this task is linked to:
+
+| Field | Description |
+|---|---|
+| **Invoice ID** | The parent invoice number |
+| **Invoice Item ID** | The specific line item ID on the invoice |
+| **Type** | The type of charge (e.g., *Service*) |
+| **Item Service Name** | The service name as it appears on the invoice |
+| **Item Subtitle** | The subtitle as recorded on the invoice |
+| **Item Code** | The billing code on the invoice |
+
+---
+
+### Right Panel — Task Report & File Upload
+
+**Lab Reports section** shows all reports created for this task:
+
+Each report entry displays:
+- A short label/code (e.g., *ABC*, *Test 3…*)
+- The report name (e.g., *FBC*, *testing*)
+- A **Completed** badge (green) once the report is done
+- The creation timestamp
+- A **View** button to open the full report
+
+Click **+ Create New** to create a new lab report entry for this task. Click the **🔄 Refresh** icon to reload the reports list.
+
+**Note section:**
+- Type any remarks or clinical notes about this task in the **Note** text box.
+- Click **Save Note** (purple button) to save your note against this task record.
+
+**Files section:**
+- Displays any files already uploaded to this task. If none have been uploaded, it shows *"No files found."*
+- To upload files (lab results, scan images, documents):
+  1. Click **Click to select files** to browse and choose files from your computer.
+  2. Alternatively, click the **AcviSync** button (top right of the upload area) to connect your mobile device via QR code and upload files wirelessly from your phone.
+  3. Once files are selected, click the blue **Upload Files** button to attach them to the task record.
+
+---
+
+## 8.5 Changing a Task Status
+
+Within the Task Details popup:
+
+1. The current status is shown as a badge (e.g., *Pending*).
+2. Click **Change Status** to update it.
+3. Select the new status from the available options.
+4. The status badge will update accordingly and the change will be reflected in the main tasks list.
+
+> **Tip:** Changing a task to **Completed** will update the status shown in the patient's Reports panel in the Customers module, and will trigger the relevant SMS notification to the patient if SMS notifications are configured.
+
+---
+
+## 8.6 Sharing a Task via URL
+
+Each task has a unique **URL** generated by the system. This link can be copied and shared with a lab technician, referral doctor, or the patient directly, giving them access to view that specific task record.
+
+To copy the URL: click the **Copy** button next to the URL field in the Task Details popup.
+
+---
+
+# Chapter 9: Invoice
+
+The **Invoice** module provides a central record of all billing transactions processed through the clinic. Staff and administrators can search, filter, and review every invoice, as well as print bills for patients. Access it by clicking **Invoice** in the left sidebar.
+
+---
+
+## 9.1 Invoice Manager Screen Overview
+
+The main screen is titled **Invoice Manager** and displays a list of all invoices within a selected date range.
+
+---
+
+## 9.2 Filtering Invoices by Date
+
+At the top right of the screen:
+
+1. Set the **Start date** using the first date picker.
+2. Set the **End date** using the second date picker.
+3. Click the **Load Data** button (dark, top right) to retrieve all invoices within that date range.
+
+> **Tip:** Always set your date range before loading data. The system will only show invoices created between the start and end dates you specify.
+
+---
+
+## 9.3 Searching for a Specific Invoice
+
+Use the **Search by ID** field (top left, below the page title) to quickly find a specific invoice by its invoice number. Type the invoice number and the list will filter instantly.
+
+---
+
+## 9.4 Invoice List Columns
+
+Each row in the invoice list represents one billing transaction:
+
+| Column | Description |
+|---|---|
+| **Invoice** | The unique invoice number |
+| **C. Name** | The customer/patient name |
+| **C. Phone** | The customer's phone number |
+| **Cashier** | The POS terminal used (e.g., *POS0001*) |
+| **Operator** | The staff member who processed the payment (e.g., *ADMIN*) |
+| **Total** | The total amount billed on this invoice |
+| **Create at** | The date and time the invoice was created |
+| **Option** | Click **View** to open the full invoice details |
+
+---
+
+## 9.5 Viewing Invoice Details
+
+Click **View** in the Options column to open the **Invoice Details** popup for that invoice.
+
+At the top of the popup:
+- **Invoice No.** — Displays the invoice number (e.g., *18*)
+- **Print Bill** — Prints a simple summary bill for the patient
+- **Print Detail Bill** — Prints a fully itemised detailed bill showing all line items
+
+---
+
+### Invoice Items Table
+
+The top section of the popup lists all items billed on this invoice:
+
+| Column | Description |
+|---|---|
+| **#** | Line item number |
+| **Detail** | Description of what was billed (e.g., doctor name) |
+| **Ref.** | Reference code (e.g., appointment reference *AP:10*, *AP:11*) |
+| **Price** | The original price of the item |
+| **Discount** | Any discount applied to that item |
+| **Total** | Final amount after discount |
+| **Action** | Any available action for that line item |
+
+In the example shown, Invoice 18 contains two appointment charges for *Test Doctor* — each at 2000.00 with no discount applied, giving a combined total of 4000.00.
+
+---
+
+### Payment Summary Tables
+
+Below the items table, two side-by-side summary tables show the payment breakdown:
+
+**Left table — Payment Method:**
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Payment** | Payment method used (e.g., *cash*) |
+| **Ref** | Any payment reference number |
+| **Amount** | The amount paid by this method |
+
+**Right table — Bill Summary:**
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Detail** | Description (e.g., *Bill Total*, *Returned Amount*) |
+| **Amount** | The corresponding amount |
+
+The **Bill Total** shows the full amount charged, and the **Returned Amount** shows any change returned to the patient (0 if the exact amount was paid).
+
+---
+
+## 9.6 Printing an Invoice
+
+From the Invoice Details popup, you have two print options:
+
+- **Print Bill** — Prints a concise receipt-style bill showing the total and payment summary. Suitable for handing to the patient as a payment confirmation.
+- **Print Detail Bill** — Prints a fully itemised invoice listing every service, product, and appointment charge individually, along with discounts and totals. Suitable for formal billing or insurance purposes.
+
+---
+
+## 9.7 Tips for Invoice Management
+
+- Use the **date range filter** at the start of each day or week to review all recent transactions.
+- Cross-reference the **Operator** column to identify which staff member processed each payment — useful for shift auditing.
+- The **Cashier** column identifies which POS terminal was used, helping reconcile the Cashier Balance Sheet.
+- All invoices are also accessible from the individual patient's profile in the **Customers** module.
+
+---
+
+# Chapter 10: TV Projector
+
+The **TV Projector** module allows the clinic to display a patient queue or token calling screen on a waiting room TV or projector. This gives patients real-time visibility of which token is currently being called, reducing the need for staff to manually call out names. Access it by clicking **TV Projector** in the left sidebar.
+
+---
+
+## 10.1 TV Screens Overview
+
+The screen is titled **TV screens** and lists all configured display screens, one per doctor or consultation room.
+
+The list contains the following columns:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Doctor Name** | The doctor this display screen is assigned to (e.g., *Test Doctor*) |
+| **Title** | The doctor's specialisation or room title shown on the TV (e.g., *Aesthetic Physician*) |
+| **Screen Link** | Click the **Open** button to launch the display screen for that doctor |
+
+---
+
+## 10.2 Opening a TV Display Screen
+
+To launch the waiting room display for a doctor:
+
+1. Locate the doctor's row in the TV screens list.
+2. Click the **Open** button (teal/cyan) in the Screen Link column.
+3. A new screen or browser tab will open displaying the live token/queue display for that doctor.
+4. This screen can be cast, projected, or displayed on any TV or monitor in the waiting area connected to the clinic's network.
+
+---
+
+## 10.3 How the TV Display Works
+
+Once opened, the TV display screen shows patients the current token number being served for that doctor's consultation room. As the doctor moves through patients in the OPD or Appointment Management module, the token number on the display updates automatically in real time.
+
+This allows patients seated in the waiting area to know when it is their turn without staff needing to make manual announcements.
+
+---
+
+## 10.4 Tips for TV Projector Setup
+
+- Each doctor or consultation room should have its own dedicated TV screen entry to avoid confusion in multi-doctor clinics.
+- Connect a TV or monitor to a device (PC, laptop, or tablet) that has the Acvilas system open, and navigate to the TV screen link for full-screen display.
+- Use your browser's full-screen mode (press **F11**) on the display device to remove browser toolbars and show only the queue screen to patients.
+- The display updates automatically — no manual refreshing is needed once the screen is open.
+
+---
+
+# Chapter 11: Reports
+
+The **Reports** module provides comprehensive analytical and operational reports across all areas of the clinic — finance, appointments, customers, SMS, and more. Access it by clicking **Reports** in the left sidebar.
+
+---
+
+## 11.1 Reports Home — Analytical Reports
+
+The Reports home page is titled **Analytical Reports — performance and insights** and displays 8 report cards:
+
+| Report Card | Icon Colour | Description |
+|---|---|---|
+| **Financial** | Blue | Revenue and profit overview |
+| **Appointment Report** | Purple | Appointment tracking and analysis |
+| **Customers** | Green | Client demographics and spending |
+| **Balance Sheet** | Purple | Assets vs liabilities / cashier flow |
+| **Invoice Ref** | Orange | Invoice reference tracking |
+| **Customer Data** | Teal | Raw customer records export |
+| **SMS Report** | Pink | Message delivery statistics |
+| **Visit Count** | Dark | Link and traffic analysis |
+
+Click any card to open that report.
+
+---
+
+## 11.2 Financial Report
+
+The **Financial Report** gives a full breakdown of clinic revenue across three categories.
+
+### How to Load Data
+1. Set the **Start date** and **End date** at the top right.
+2. Click **Load Data** to retrieve the financial data for that period.
+
+### Quick CSV Downloads
+At the top of the report, two quick-download links are available:
+- **App. Count by Doctor** — Downloads a CSV of appointment counts per doctor
+- **App. Doctor Chargers** — Downloads a CSV of doctor charge totals
+
+### Tabs
+
+**Appointments Tab** shows:
+- **Appointments Doctor Charge Overview** — A table listing each doctor and their total charges collected
+- **Appointments Revenue Summary** — Key financial figures including Total Items, Total Payments, Total Hospital Charge, Total Doctor Charge, Total Hospital Discount, and Total Service Discount
+- **All Appointment Records** — A detailed row-by-row list of every appointment with columns for Date, AP ID, Invoice, Customer Name & Phone, Doctor, Doctor Charge, Hospital Charge, Discounts, and Total Pay. Click **Download CSV** to export this list.
+
+**Service Tab** shows:
+- **Service Operator Charge Overview** — Lists each responsible staff member and their service revenue totals
+- **Service Revenue Summary** — Totals for Hospital Discount, Service Discount, Payments, Hospital Charge, Service Charge, and Items
+- **Service / Hospital Charge Summary** — Visual summary charts
+- **All Service Records** — Full line-by-line list of all service transactions with columns for Date, Invoice, Customer, Service Name, Subtitle, Code, Ref.To, Ref, Ref.Pay, Service Charge, Hospital Charge, and Total Pay. Click **Download CSV** to export.
+
+**Products Tab** shows:
+- **Search filters** — Filter by Customer Name, Customer Phone, Generic Name, Drug Code, or Drug Name
+- **Summary cards** at the top showing: Count, Total Quantity, Total Sale, Total Cost, and Total Profit in colour-coded boxes
+- **Acvilas AI panel** — Click to analyse product sales data using AI
+- **Product Sales Summary** — A table showing each product with Code, Name, Unit Price, Total Qty, Total Sale, Total Cost, Profit, and Current Stock. Click **Download CSV** to export.
+- **Product Records** — Individual transaction rows showing Product ID, Bill Item ID, Bill ID, Customer Name & Phone, Generic Name, Drug Code, Drug Name, Unit Cost, Unit Price, Quantity, Total, and Created At. Click **Download CSV** to export.
+
+---
+
+## 11.3 Appointment Report
+
+The **Appointment Report** provides a filterable list of all appointments within a date range.
+
+### Filters Available
+- **Date range** — Start and end date pickers
+- **All Doctors** dropdown — Filter by a specific doctor
+- **All Status** dropdown — Filter by appointment status (Pending, Waiting, Complete, etc.)
+- **Paid & Unpaid** dropdown — Filter by payment status
+
+Click the **Load** button (purple) to apply filters and retrieve results.
+
+### Summary Counters
+At the top of the results, two counters show:
+- **Total** — Total number of appointments matching the filters
+- **Waiting** — Number of those currently in waiting status
+
+### Results Table Columns
+
+| Column | Description |
+|---|---|
+| **Date** | Appointment date |
+| **Time** | Appointment time |
+| **Doctor** | Assigned doctor |
+| **Customer** | Patient name |
+| **Phone** | Patient phone |
+| **Status** | Current status badge |
+| **Note** | Any notes on the appointment |
+| **Payment** | Payment reference and status (Paid #17, Not Paid, etc.) |
+| **Created** | When the appointment was created |
+| **Log** | Click **View Logs** to see the full activity history for that appointment |
+
+Use **CSV Download** (top right of results) to export the full list. Use the **Date Ascending/Descending** dropdown to sort results.
+
+---
+
+## 11.4 Customer Report
+
+The **Customer Report** gives a demographic and financial overview of all patients.
+
+### Summary Cards (top of page)
+- **Total Revenue** — Total amount billed across all customers
+- **Total Returns** — Total refunds and discounts issued
+- **VIP Customers** — Count of customers with 20%+ revenue share
+- **Top Customer** — The highest-spending customer with their revenue share percentage
+
+### Acvilas AI Panel
+Click **Click to analyse** on the Acvilas AI panel to get an AI-generated analysis of your customer data.
+
+### Filters
+- **Phone or name** search field
+- **Min Bill / Max Bill** — Filter customers by their billing range
+- **Date range** — Filter by first visit date
+- **Tier buttons** — Filter by All, VIP ⭐, Regular ◆, or New customers
+
+### Customer List Columns
+
+| Column | Description |
+|---|---|
+| **Phone** | Customer phone number |
+| **Names** | Customer name (with +1 badge if multiple records share the phone) |
+| **Tier** | Customer tier badge (VIP, Regular, New) |
+| **Total Bill** | Total amount billed to this customer |
+| **Returns** | Total refunds/returns (shown in red) |
+| **Share %** | This customer's percentage share of total clinic revenue, shown as a visual bar |
+| **Since** | Date and days since first visit |
+
+The footer row shows totals across all customers including Net revenue after returns. Click **Export CSV** (top right) to export the full report.
+
+---
+
+## 11.5 Balance Sheet Report
+
+The **Cashier BalanceSheet Report** shows a full cash flow log for all POS terminals.
+
+### How to Load
+1. Set **Start** and **End** dates.
+2. Click **Load Report** (purple button).
+3. Click **Download CSV** to export.
+
+### Filters
+- **Search by description** — Find specific transactions
+- **Show All** dropdown — Filter transaction types
+- **All POS** dropdown — Filter by a specific cashier terminal
+- **All Cash Types** dropdown — Filter by payment type (cash, card, etc.)
+
+### Summary Totals (top right)
+- **Filtered IN** — Total money received
+- **Filtered OUT** — Total money paid out
+- **Net Total** — The difference (IN minus OUT)
+
+### Transaction List Columns
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Description** | Transaction description (e.g., *Open Balance*, *Deposit bank*, *INV:18 – Mr. Layan*) |
+| **Time** | Exact timestamp |
+| **POS** | Cashier terminal used |
+| **Operator** | Staff who processed it |
+| **Type** | Payment type (e.g., cash) |
+| **Ref** | Reference number if applicable |
+| **IN** | Amount received |
+| **OUT** | Amount paid out |
+| **Total** | Running total for that entry |
+
+The **Acvilas AI** panel is also available here — click to analyse your balance sheet data.
+
+---
+
+## 11.6 Invoice Reference Report
+
+The **Invoice Reference Data** report tracks invoices grouped by reference (e.g., by doctor or referral source).
+
+### How to Load
+Set **Start date** and **End date**, then click **Load Data**.
+
+### Reference Summary (top table)
+Shows each reference source, the total amount billed through that reference, and the count of invoices. Click **Search** to filter the invoice list below to that reference only.
+
+### Search
+Use the **Search by ID, C.Name, or C.Phone** field to find specific invoices.
+
+### Invoice List Columns
+Invoice, C.Name, C.Phone, Cashier, Operator, Ref, Total, Create at, and **View** option — identical to the Invoice Manager layout. Click **View** on any row to open that invoice's full details.
+
+---
+
+## 11.7 Customer Data Report
+
+The **Customer Data Report** exports raw patient demographic records for analysis or compliance purposes.
+
+### Filters Available
+- **Age Range** — Set minimum and maximum age (e.g., 0 to 100)
+- **Ethnicity** — Filter by ethnicity using the dropdown
+- **City** — Filter by city using the dropdown
+
+Click **Refresh** to reload the list. Click **Export CSV** to download the filtered records.
+
+### Data Columns
+Name, Phone, Address, ID Number, Weight, Age, City, Ethnicity, and Sex — displaying all registered patient profile data. Fields not yet filled in show as a dash (–).
+
+---
+
+## 11.8 SMS Delivery Report
+
+The **SMS Delivery Report** tracks all SMS messages sent from the system to patients.
+
+### How to Load
+Set **Start date** and **End date**, then click **Load Data**.
+
+### Summary Bar (top)
+- **Total Cost** — Total amount spent on SMS in the period
+- **Total SMS** — Number of messages sent
+- **Wallet Balance** — Remaining SMS credit balance
+
+### SMS List Columns
+
+| Column | Description |
+|---|---|
+| **ID** | Message ID |
+| **Phone** | Recipient phone number |
+| **Message** | A preview of the message content. Click **See more** to read the full message |
+| **Cost** | Cost of that individual SMS |
+| **Time** | Date and time the message was sent |
+| **Data** | Delivery status data in JSON format (e.g., *{"status":"success"*…). Click **See more** to view the full delivery response |
+
+---
+
+## 11.9 Visit Count Report (Link Visit Count)
+
+The **Link Visit Count** report tracks how many times patient-facing report links (such as lab result URLs) have been accessed.
+
+### How to Load
+Set **Start date** and **End date**, then click **Load Data**. Use the **Search link or data** field to find specific links.
+
+### Columns
+
+| Column | Description |
+|---|---|
+| **ID** | Record ID |
+| **Link** | The URL that was accessed |
+| **Data** | The patient phone number or identifier associated with the link |
+| **Count** | How many times the link has been opened |
+| **Last Update** | The most recent timestamp of access |
+
+This report is useful for confirming whether a patient has viewed their shared lab report or task result link.
+
+---
+
+# Chapter 12: Administration
+
+The **Administration** module is the control centre for the entire Acvilas system. It is where administrators configure the clinic's setup, manage staff access, define services, control stock, and manage system-wide settings. Access it by clicking **Administration** (the wrench/settings icon) in the left sidebar.
+
+---
+
+## 12.1 Administration Home
+
+The Administration home page is titled **Administration** with the subtitle *"Manage your clinical ecosystem and system configurations."*
+
+It displays **12 configuration modules** arranged in a grid of colourful cards. Each card leads to a dedicated settings area:
+
+---
+
+## 12.2 Administration Modules Overview
+
+### Row 1
+
+| Card | Colour | Purpose |
+|---|---|---|
+| **Doctors** | Blue-Teal | Add, edit, and manage doctor profiles, specialisations, fees, and schedules |
+| **User Roles** | Purple | Define permission levels and access rights for different staff roles |
+| **Users** | Green-Teal | Create and manage system user accounts for all staff |
+| **Paramedical** | Orange | Manage paramedical staff profiles (nurses, technicians, etc.) |
+| **Services** | Pink-Red | Configure the clinic's service catalogue — names, codes, charges, and task settings |
+| **Laboratory** | Blue | Set up laboratory departments, test types, and lab report templates |
+
+### Row 2
+
+| Card | Colour | Purpose |
+|---|---|---|
+| **Promotions** | Purple | Create and manage discount promotions and special offers |
+| **Stock** | Orange | Manage pharmacy and product inventory — add products, set prices, and track stock levels |
+| **Messaging** | Teal-Blue | Configure SMS templates and messaging settings for patient notifications |
+| **System Settings** | Dark Grey | Core system configuration — clinic name, branding, POS setup, and global preferences |
+| **System Usage** | Blue-Purple | View system usage statistics and activity logs |
+| **Bulk Actions** | Red-Orange | Perform mass operations on records such as bulk updates or bulk deletions |
+
+---
+
+## 12.3 Navigating Administration Modules
+
+To open any administration module:
+1. Click the relevant card from the Administration home page.
+2. The module will open in its own screen.
+3. Use the breadcrumb trail at the top (e.g., *Home > Administration > Doctors*) to navigate back.
+
+> **Note:** Access to Administration modules is restricted based on the logged-in user's role. Only users with Administrator-level permissions will see and be able to use all modules. Staff with limited roles may see only the modules relevant to their work.
+
+---
+
+> Each Administration sub-module will be covered in detail in the following sections of this chapter as individual screens are provided.
+
+---
+
+# Chapter 12.1: Administration — Doctors
+
+The **Doctors** section under Administration is where all doctor profiles are created and managed. This includes their personal details, consultation fees, schedules, and booking settings. Access it from **Administration > Doctors**.
+
+---
+
+## 12.1.1 Doctors List Screen
+
+The screen is titled **Administration > Doctors** and displays all registered doctors in the system.
+
+At the top:
+- **Search by name** — Type to filter the doctor list by name
+- **Refresh** — Reloads the list
+- **+ New Doctor** — Opens the form to create a new doctor profile (top right, dark button)
+
+### Doctors List Columns
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Image** | The doctor's profile photo |
+| **Name** | The doctor's full name |
+| **Title** | The doctor's specialisation or title (e.g., *Aesthetic Physician*) |
+| **Active** | Status badge — **Active** (green) or inactive |
+| **Option** | Action links: **Details**, **Normal Schedule**, **Flex Schedule**, **Notes** |
+
+---
+
+## 12.1.2 Viewing Doctor Details
+
+Click **Details** in the Options column to open the doctor's profile popup. This displays a read-only summary of all configured settings:
+
+### Doctor Section
+- **Name** — Doctor's full name
+- **Tagline** — Doctor's title/specialisation
+
+### Charges Section
+- **Doctor Charge** — The portion of the consultation fee that goes to the doctor
+- **Hospital Charge** — The portion that goes to the hospital/clinic
+
+### Notification Section
+- **SMS** — Whether SMS notifications are enabled or disabled for this doctor
+
+### Online Booking Section
+- **Online Booking** — Whether patients can book appointments online (Enable/Disable)
+
+### More Details Section
+- **Charge Type** — When payment is collected (*before_meet* = before consultation)
+- **Waiting List Index** — How patients are ordered in the waiting list (e.g., by *appid* = Appointment ID)
+
+Click **Edit Details** (dark button) to open the editable form for this doctor.
+
+---
+
+## 12.1.3 Editing a Doctor Profile
+
+Click **Edit Details** from the Details popup, or click **Details > Edit Details** to open the **Edit Doctor** form. All fields are editable:
+
+| Field | Description |
+|---|---|
+| **Change Image** | Click to upload a new profile photo for the doctor |
+| **Doctor Name** | The doctor's full name |
+| **Title** | Specialisation or role title |
+| **Doctor Charge** | Fee amount allocated to the doctor |
+| **Hospital Charge** | Fee amount allocated to the hospital/clinic |
+| **Charge Type** | Dropdown — *Before Meet* (payment collected before consultation) or *After Meet* |
+| **Waiting List Index By** | Dropdown — *App ID* (orders waiting list by appointment ID) or *Bill ID* |
+| **SMS Notification** | Dropdown — *Enable* or *Disable* SMS alerts for this doctor's appointments |
+| **Enable Online Booking** | Dropdown — *Active* (patients can book online) or *Disable* |
+| **Status** | Dropdown — *Active* (doctor is available) or *Inactive* |
+
+Click **Save Changes** (purple button) to apply all edits.
+
+---
+
+## 12.1.4 Creating a New Doctor
+
+Click **+ New Doctor** (top right of the Doctors list screen) to open the **Create New Doctor** form. The fields are identical to the Edit Doctor form:
+
+1. Click **Change Image** to upload the doctor's photo.
+2. Enter the **Doctor Name** and **Title**.
+3. Set the **Doctor Charge** and **Hospital Charge** amounts.
+4. Choose the **Charge Type** — *Before Meet* or *After Meet*.
+5. Set **SMS Notification** — *Enable* or *Disable*.
+6. Set **Waiting List Index By** — *Bill ID* or *App ID*.
+7. Set **Enable Online Booking** — *Active* or *Disable*.
+8. Click **Submit** to create the new doctor profile.
+
+> **Note:** The Submit button becomes active only after all required fields are filled in.
+
+---
+
+## 12.1.5 Normal Schedule
+
+Click **Normal Schedule** in the Options column to open the **Doctor Schedule** popup. This is where recurring weekly session times are configured for the doctor.
+
+The schedule list shows:
+
+| Column | Description |
+|---|---|
+| **No.** | Row number |
+| **Week Day** | The day of the week for this session (e.g., Sunday, Wednesday, Saturday) |
+| **Time** | The session start time |
+| **Remove** | Click to delete this schedule entry |
+
+To add a new recurring session:
+1. Click **New Schedule** (dark button, top right of the popup).
+2. Select the **Week Day** and enter the **Time**.
+3. Save the entry.
+
+The new slot will appear in the Time Table module every week on the configured day.
+
+> **Tip:** Normal Schedule entries repeat every week automatically. Use them for the doctor's regular working days.
+
+---
+
+## 12.1.6 Flex Schedule
+
+Click **Flex Schedule** in the Options column to open the **Doctor Flex Schedule** popup. This is for one-off or temporary session slots that do not repeat weekly.
+
+At the top, set a **Start Date** and **End Date** to filter and view existing flex slots within that range.
+
+The list shows:
+
+| Column | Description |
+|---|---|
+| **No.** | Row number |
+| **Date** | The specific calendar date of this session |
+| **Time** | The session start time |
+| **Remove** | Click to delete this flex slot |
+
+To add a new flex slot:
+1. Click **Add Flex Schedule** (dark button, top right).
+2. Enter the specific **Date** and **Time** for the one-off session.
+3. Save the entry.
+
+> **Tip:** Use Flex Schedule for special clinic days, extra sessions, or when the doctor works outside their normal weekly pattern.
+
+---
+
+## 12.1.7 Doctor Notes
+
+Click **Notes** in the Options column to open the **Doctor Notes** popup. This is where important schedule notes or alerts are recorded against a specific date for the doctor.
+
+### How to View Notes
+Set a **Start Date** and **End Date** to filter notes within that date range. Existing notes appear in a list showing the **Date** and **Note** content.
+
+### How to Add a New Note
+1. Click **+ New Note** (dark button, top right of the popup).
+2. Enter the date and the note content.
+3. Save the note.
+
+> ⚠️ **Important:** Notes added here will **appear as an alert when an appointment is being booked** for this doctor on or around that date. Use this feature to warn booking staff about schedule changes, doctor unavailability, public holidays, or any special instructions relevant to that date.
+
+---
+
+# Chapter 12.2: Administration — User Roles
+
+The **User Roles** section allows administrators to define what each type of staff member can access and do within the Acvilas system. By assigning specific permissions to roles, you control which modules and features each staff category can use. Access it from **Administration > User Roles**.
+
+---
+
+## 12.2.1 User Roles Screen Overview
+
+The screen is titled **Administration > User Roles** and has two main panels side by side:
+
+- **Left panel** — Available Permissions (the full list of all permissions in the system)
+- **Right panel** — The permissions currently assigned to the selected role
+
+At the top:
+- **Select Role** dropdown — Choose which role you want to view or edit (e.g., *Cashier*, *Doctor*, *Admin*, etc.)
+- **Refresh** — Reloads the page
+- **Create New Role** — Opens the form to add a new role (top right, dark button)
+
+---
+
+## 12.2.2 Available Permissions List
+
+The left panel lists every permission available in the system. Each row shows:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Name** | The permission name (what it controls) |
+| **Add** | Click to add this permission to the currently selected role |
+
+Examples of available permissions visible in the system include:
+
+- TV Projector Control
+- View Customer Directory
+- System Report
+- Task Tab 1 / Task Tab 2 / Task Tab 3
+- View POS Balance Sheet
+- Laboratory Administration
+- Service Control
+- Doctor Control
+- User Control
+- Role Control
+- Waiting List Control
+- *(and more when scrolling)*
+
+---
+
+## 12.2.3 Role Permissions Panel
+
+The right panel shows the permissions **currently assigned** to the selected role (e.g., *Cashier Role Permissions*). Each assigned permission shows:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Name** | The permission assigned to this role |
+| **Remove** | Click to remove this permission from the role |
+
+In the example shown, the **Cashier** role has been assigned: Promotion Control, Task Tab 3, and Task Tab 2.
+
+Click **Save Changes** (green button, top right of the right panel) to save any changes made to the role's permissions.
+
+---
+
+## 12.2.4 Managing Role Permissions
+
+### To Add a Permission to a Role:
+1. Select the role from the **Select Role** dropdown.
+2. In the **Available Permissions** list on the left, find the permission you want to add.
+3. Click **Add** next to that permission.
+4. It will appear in the right panel under the role's current permissions.
+5. Click **Save Changes** to confirm.
+
+### To Remove a Permission from a Role:
+1. Select the role from the **Select Role** dropdown.
+2. In the right panel, find the permission you want to remove.
+3. Click **Remove** (red button) next to it.
+4. Click **Save Changes** to confirm.
+
+---
+
+## 12.2.5 Creating a New Role
+
+Click **Create New Role** (top right) to open the **Create New WP Role** popup.
+
+1. Enter the **Role Name** in the text field (e.g., *Receptionist*, *Lab Technician*, *Nurse*).
+2. Click **Submit** (purple button) to create the role.
+3. The new role will then appear in the **Select Role** dropdown.
+4. You can then assign permissions to it as described in Section 12.2.4.
+
+---
+
+## 12.2.6 Permission Reference Guide
+
+The table below describes the key permissions available in the system:
+
+| Permission Name | What It Controls |
+|---|---|
+| **TV Projector Control** | Access to the TV Projector/queue display module |
+| **View Customer Directory** | Access to view the Customers module |
+| **System Report** | Access to the Reports module |
+| **Task Tab 1 / 2 / 3** | Access to specific service task department tabs in Service Task module |
+| **View POS Balance Sheet** | Access to view the cashier balance sheet |
+| **Laboratory Administration** | Access to manage lab settings in Administration |
+| **Service Control** | Access to manage services in Administration |
+| **Doctor Control** | Access to manage doctor profiles in Administration |
+| **User Control** | Access to manage user accounts in Administration |
+| **Role Control** | Access to manage user roles in Administration |
+| **Waiting List Control** | Access to manage and view the patient waiting list |
+| **Promotion Control** | Access to manage promotions and discounts |
+
+> **Best Practice:** Assign only the permissions each role genuinely needs. For example, a Cashier role should have billing and POS access but not Doctor Control or Administration settings. This protects sensitive data and reduces the risk of accidental changes.
+
+---
+
+# Chapter 12.3: Administration — Users (User Management)
+
+The **Users** section is where all system user accounts are created and managed. Every staff member who needs to log in to Acvilas must have a user account created here, with a role assigned to control their access level. Access it from **Administration > Users**.
+
+---
+
+## 12.3.1 User Management Screen Overview
+
+The screen is titled **User Management** and displays summary counters at the top:
+
+| Counter | Description |
+|---|---|
+| **Total Users** | The total number of user accounts in the system |
+| **Administrators** | The number of users with Administrator role |
+
+### Filters and Search
+- **Search field** — Search by name, email, or username
+- **All** tab — Shows all users with a count badge
+- **Administrator** tab — Filters to show only Administrator-level users (with count badge)
+- Additional role tabs appear here automatically as new roles are created
+
+At the top right: **+ New User** button (dark) to create a new user account.
+
+---
+
+## 12.3.2 User List Columns
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **User** | Profile avatar (initials) and full name |
+| **Email** | The user's login email address |
+| **Username** | The username used to log in (e.g., *ADMIN*) |
+| **Role** | The role badge assigned to this user (e.g., *Administrator*) |
+| **Actions** | Click **Edit User** to open the user's edit form |
+
+A footer line below the list shows the total count (e.g., *Showing 1 of 1 users*).
+
+---
+
+## 12.3.3 Creating a New User
+
+Click **+ New User** (top right) to open the **Create New User** popup.
+
+Fill in the following fields:
+
+| Field | Description |
+|---|---|
+| **Email** | The user's email address — used for login and notifications |
+| **Username** | A unique username for logging in (e.g., RECEPTION01) |
+| **First Name** | The user's first name |
+| **Last Name** | The user's last name |
+
+Click **Submit** (purple button) to create the account.
+
+> **Note:** After creating the user, you must edit the account to assign a **Role** and set a **Password** before the user can log in. See Section 12.3.4 below.
+
+---
+
+## 12.3.4 Editing a User / Setting a Password
+
+Click **Edit User** in the Actions column to open the **Edit User** popup. This form allows you to update user details, assign or change their role, and set or reset their password.
+
+| Field | Description |
+|---|---|
+| **Email** | The user's login email address (editable) |
+| **First Name** | User's first name (editable) |
+| **Last Name** | User's last name (editable) |
+| **Role** | Dropdown — Assign the appropriate role (e.g., *Administrator*, *Cashier*, *Receptionist*, etc.) |
+| **Password** | Enter a new password to set or change the user's login password |
+
+Click **Submit** (purple button) to save all changes.
+
+---
+
+## 12.3.5 Setting and Changing Passwords
+
+> **Important:** The **Password** field in the Edit User form is used both to **set a password for a newly created user** and to **change the password of an existing user**.
+
+### To set a password for a new user:
+1. Create the user account using **+ New User**.
+2. Click **Edit User** on the newly created account.
+3. Assign the correct **Role** from the dropdown.
+4. Type a secure password in the **Password** field.
+5. Click **Submit** to save.
+6. Share the login credentials (email/username and password) with the staff member securely.
+
+### To change an existing user's password:
+1. Find the user in the list and click **Edit User**.
+2. Leave other fields as they are.
+3. Type the new password in the **Password** field.
+4. Click **Submit** to save the new password.
+
+> **Security Tip:** Always use strong passwords combining letters, numbers, and symbols. Change passwords promptly if a staff member leaves the clinic or if a security breach is suspected.
+
+---
+
+## 12.3.6 Role Assignment
+
+When editing a user, the **Role** dropdown lists all roles created in the User Roles module (Chapter 12.2). Assigning the correct role ensures the user only has access to the modules and features appropriate for their job function.
+
+For example:
+- A **Cashier** staff member should be assigned the *Cashier* role to access billing functions only.
+- A **Receptionist** should be assigned a role with appointment booking and customer directory access.
+- An **Administrator** has full system access.
+
+> Always verify the role permissions in **Administration > User Roles** before assigning a role to a new user.
+
+---
+
+# Chapter 12.4: Administration — Paramedical
+
+The **Paramedical** section is where non-doctor clinical staff are registered in the system — such as nurses, physiotherapists, lab technicians, radiographers, or any other paramedical professional. Once added, paramedical staff can be assigned as responsible persons for services in the Services module. Access it from **Administration > Paramedical**.
+
+---
+
+## 12.4.1 Paramedical Screen Overview
+
+The screen is titled **Administration > Paramedical** and displays a list of all registered paramedical staff.
+
+At the top:
+- **Refresh** — Reloads the list
+- **+ New Paramedical** — Opens the form to register a new paramedical staff member (top right, dark button)
+
+### Paramedical List Columns
+
+| Column | Description |
+|---|---|
+| **Name** | The paramedical staff member's full name |
+| **Tagline** | Their role or title (e.g., *Nurse*, *Lab Technician*, *Physiotherapist*) |
+| **Status** | Whether the staff member is currently active or inactive |
+| **Option** | Action buttons to edit or manage the record |
+
+When no paramedical staff have been added yet, the list will be empty as shown.
+
+---
+
+## 12.4.2 Creating a New Paramedical Staff Member
+
+Click **+ New Paramedical** (top right) to open the **Create New Paramedical** popup.
+
+Fill in the following two fields:
+
+| Field | Description |
+|---|---|
+| **Paramedical Name** | The full name of the staff member (e.g., *Sarah Perera*) |
+| **Title** | Their professional title or role (e.g., *Nurse*, *Radiographer*, *Lab Tech*) |
+
+Click **Submit** to register the new paramedical staff member.
+
+> **Note:** The Submit button becomes active only after both fields are filled in.
+
+---
+
+## 12.4.3 How Paramedical Staff Are Used in the System
+
+Once a paramedical staff member is registered, they become available for selection in the **Services** module (Administration > Services) as the **Responsible** person for a specific service. For example:
+
+- An *Abdominal Scan* service can be assigned to a *Radiographer*
+- A *Blood Test* service can be assigned to a *Lab Technician*
+- A *Wound Dressing* service can be assigned to a *Nurse*
+
+This assignment ensures that when a service task is created in the **Service Task** module, it is routed to the correct staff member responsible for performing it.
+
+---
+
+## 12.4.4 Managing Existing Paramedical Staff
+
+Once paramedical staff are added, each entry in the list will have an **Option** column with actions to:
+- **Edit** — Update the name, title, or status
+- **Deactivate / Change Status** — Mark a staff member as inactive if they are no longer working at the clinic (without deleting their historical records)
+
+> **Best Practice:** Rather than deleting a paramedical staff record when someone leaves, set their status to *Inactive*. This preserves historical service task records that reference that staff member.
+
+---
+
+# Chapter 12.5: Administration — Services
+
+The **Services** module is where all clinical and medical services offered by the clinic are configured. These services appear in the OPD, Appointment Management, and POS billing screens when adding charges to a patient's visit. Access it from **Administration > Services**.
+
+---
+
+## 12.5.1 Services Screen Overview
+
+The screen is titled **Administration > Services** and lists all configured services.
+
+At the top:
+- **All** tab (purple) — Shows all services
+- **Search field** — Search by Code, Service Name, Title, or Doctor
+- **Refresh** — Reloads the list
+- **+ New Service** — Opens the form to add a new service (top right, dark button)
+
+---
+
+## 12.5.2 Services List Columns
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Service Name** | The category name of the service (e.g., *Abdominal Scan*, *Consultation*) |
+| **Title** | The specific sub-title of this service entry |
+| **CODE** | The unique billing code for this service |
+| **Responsible** | Who performs this service — *none*, *doctor*, or a paramedical staff member |
+| **Res. Name** | The specific responsible person's name if assigned |
+| **Task** | Whether a Service Task is automatically created when this service is billed — **Yes** (green) or **No** (red) |
+| **Status** | Whether the service is active — **Enabled** (green) or disabled |
+| **Total Price** | The full price charged to the patient (Hospital Charge + Service Charge combined) |
+| **Option** | **View** — read-only details / **Edit** — modify the service / **Delete** — remove the service |
+
+---
+
+## 12.5.3 Adding a New Service
+
+Click **+ New Service** (top right) to open the **Add New Service** form. Fill in all the fields:
+
+### Basic Information
+
+| Field | Description |
+|---|---|
+| **Service Name** | The category name (e.g., *Blood Test*, *X-Ray*, *Consultation*) |
+| **Service Title** | A more specific sub-title for this service entry |
+| **Code** | A unique billing code for this service (e.g., *BT-001*, *CO 123*) |
+
+### Charges
+
+| Field | Description |
+|---|---|
+| **Hospital Charge** | The portion of the fee that goes to the clinic/hospital |
+| **Service Charge** | The portion of the fee that goes to the responsible person (doctor or paramedical) |
+| **Service Responsible** | Dropdown — Select who performs this service: *None*, **Doctor**, or **Paramedical** |
+
+### Referral & Charge Allocation
+
+| Field | Description |
+|---|---|
+| **Reference** | Select a reference source if this service is referred from a specific entity |
+| **Service Charge Allocate Type** | How the service charge is split or allocated: *None*, **Percentage (%)**, **Fix Amount**, or **Full Amount** |
+| **Amount** | The allocation amount or percentage value if a charge allocate type is selected |
+
+### Task & POS Settings
+
+| Field | Description |
+|---|---|
+| **Is Task** | Dropdown — **Yes** to automatically create a Service Task in the Service Task module when this service is billed. **No** if no task is needed |
+| **Service Charge Enter in POS** | Dropdown — **Yes** allows the cashier to manually enter the service charge at the POS. **No** locks it to the preset price |
+| **Is Enable** | Dropdown — **Yes** to make this service visible and available for billing. **No** to disable it |
+
+### Notifications & Privacy
+
+| Field | Description |
+|---|---|
+| **Privacy Concerns** | Dropdown — **Yes** marks this service as sensitive/private (e.g., for confidential procedures). **No** for standard services |
+| **SMS Notification** | Dropdown — **Enable** to send an SMS to the patient when this service task is updated. **Disable** to turn off SMS for this service |
+
+Click **Submit** to save the new service.
+
+---
+
+## 12.5.4 Editing an Existing Service
+
+Click **Edit** in the Options column next to any service to open the same form pre-filled with the current values. Make your changes and click **Submit** to save.
+
+---
+
+## 12.5.5 Deleting a Service
+
+Click **Delete** (red button) in the Options column to remove a service from the system.
+
+> ⚠️ **Caution:** Only delete a service if it has never been used in any patient billing. Deleting a service that has existing invoice or task records may cause data inconsistencies. It is safer to **disable** a service by setting *Is Enable* to **No** rather than deleting it.
+
+---
+
+## 12.5.6 Viewing a Service
+
+Click **View** in the Options column to open a read-only summary of all the settings configured for that service — useful for a quick review without risking accidental edits.
+
+---
+
+## 12.5.7 How Services Flow Through the System
+
+Once a service is configured here, it becomes available in:
+- **OPD module** → Services tab — doctors can add it to a consultation
+- **Appointment Management** → Services tab — added during a managed appointment
+- **POS/Cashier** — appears as a billable line item on the patient's invoice
+- **Service Task module** — if *Is Task* is set to **Yes**, a task is automatically created and assigned to the responsible staff member when the service is billed
+
+---
+
+# Chapter 12.6: Administration — Promotions
+
+The **Promotions** module allows administrators to create named discount packages that can be applied to patient bills at the POS/Cashier. Promotions can offer fixed amount discounts or percentage discounts on hospital charges, service charges, or both. Access it from **Administration > Promotion**.
+
+---
+
+## 12.6.1 Promotions Screen Overview
+
+The screen is titled **Administration > Promotion** and lists all configured promotions.
+
+At the top:
+- **Refresh** — Reloads the list
+- **+ New Promotion** — Opens the form to create a new promotion (top right, dark button)
+
+When no promotions have been created yet, the list will be empty.
+
+### Promotions List Columns
+
+| Column | Description |
+|---|---|
+| **Name** | The promotion's name (e.g., *Staff Discount*, *Senior Citizen Offer*) |
+| **Discount_hospital_fix** | Fixed amount discount applied to the hospital charge |
+| **Discount_hospital_percent** | Percentage discount applied to the hospital charge |
+| **Discount_service_fix** | Fixed amount discount applied to the service charge |
+| **Discount_service_percent** | Percentage discount applied to the service charge |
+| **Is Enable** | Whether the promotion is currently active and available to use |
+| **Options** | Edit or delete the promotion |
+
+---
+
+## 12.6.2 Creating a New Promotion
+
+Click **+ New Promotion** (top right) to open the **Add New Promotion** form.
+
+Fill in the following fields:
+
+### Promotion Name
+Enter a clear, descriptive name for the promotion so cashier staff can easily identify it at the POS (e.g., *Staff Discount 50%*, *VIP Patient Offer*, *Senior Discount*).
+
+### Discount Fields
+
+| Field | Description |
+|---|---|
+| **Hospital Discount (Fixed)** | Enter a fixed currency amount to deduct from the hospital portion of the bill (e.g., enter *500* to give LKR 500 off the hospital charge) |
+| **Hospital Discount (%)** | Enter a percentage to deduct from the hospital charge (e.g., enter *10* for 10% off) |
+| **Service Discount (Fixed)** | Enter a fixed currency amount to deduct from the service/doctor charge |
+| **Service Discount (%)** | Enter a percentage to deduct from the service charge |
+
+> **Note:** You can combine fixed and percentage discounts, or use only one type. Set unused fields to 0.
+
+### Is Enabled?
+- **Yes** — The promotion is active and will appear as an option at the POS cashier screen
+- **No** — The promotion is saved but hidden from the cashier — useful for seasonal or temporary offers that are not yet active
+
+Click **Submit** to save the new promotion.
+
+---
+
+## 12.6.3 Promotion Examples
+
+| Promotion Name | Hospital Fix | Hospital % | Service Fix | Service % | Use Case |
+|---|---|---|---|---|---|
+| Staff Discount | 0 | 50 | 0 | 50 | 50% off all charges for clinic staff |
+| Senior Citizen Offer | 200 | 0 | 0 | 0 | LKR 200 fixed reduction on hospital fees |
+| VIP Package | 0 | 10 | 0 | 10 | 10% across all charges for VIP patients |
+| Free Consultation | 0 | 0 | 100 | 0 | Full service charge waived (fixed LKR 100) |
+
+---
+
+## 12.6.4 Managing Existing Promotions
+
+Once promotions are created, the Options column in the list provides:
+- **Edit** — Modify the promotion name, discount values, or enabled status
+- **Delete** — Permanently remove the promotion
+
+> **Best Practice:** Rather than deleting an expired promotion, set *Is Enabled* to **No** to deactivate it. This preserves the record for reference and allows you to re-enable it later (e.g., for annual promotional events).
+
+---
+
+## 12.6.5 Applying Promotions at the POS
+
+Once a promotion is created and enabled, cashier staff can select it from the discount/promotion options when processing a payment at the **Cashier POS** screen. The system will automatically calculate and apply the configured discount amounts to the patient's bill before finalising the invoice.
+
+> Only staff with the **Promotion Control** permission (configured in User Roles) will be able to apply promotions at the POS.
+
+---
+
