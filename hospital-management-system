@@ -864,9 +864,123 @@ This is used by supervisors and administrators to reconcile daily cash at the en
 
 If your clinic has more than one billing counter (e.g., a front desk cashier and a pharmacy counter), each will appear as a separate row in this list with its own unique POS code. Each cashier point operates independently, allowing simultaneous billing at different counters without conflict.
 
+# Chapter 7 (Continued): Cashier — Balance Sheet
+
+This section covers the full **Cashier Balance Sheet** screen, which is accessed by clicking **Balance Sheet** from the Cashier Points list (Chapter 7.3). This is the detailed daily cash management screen for a specific POS terminal.
+
 ---
 
-## 7.5 Best Practices for Cashier Use
+## 7.4 Cashier Balance Sheet Screen
+
+The screen is titled **POS0001 - Cashier BalanceSheet** and provides a complete financial summary and transaction log for the selected cashier terminal on a specific date.
+
+At the top:
+- **Date picker** — Select the date you want to view (e.g., *2026-04-18*). The balance sheet updates to show only transactions for that day.
+- **Refresh** — Reloads the data
+- **Invoice Record** — Opens a list of all invoices processed through this POS on the selected date
+- **Cash IN / OUT** — Opens a form to manually record a cash movement (e.g., opening float, bank deposit, or petty cash withdrawal)
+- **Download CSV** — Exports the full transaction list for the selected date
+
+---
+
+## 7.5 Daily Financial Summary Cards
+
+Across the top of the screen, seven summary cards give an instant overview of the day's cash position:
+
+| Card | Badge | Description |
+|---|---|---|
+| **Card Total** | IN (blue) | Total received by card payment |
+| **Cash Total** | IN (blue) | Total received in cash |
+| **Total** | IN (blue) | Combined total of all money received (Card + Cash IN) |
+| **Card Total** | OUT (orange) | Total paid out by card |
+| **Cash Total** | OUT (orange) | Total paid out in cash (e.g., refunds, deposits) |
+| **Total** | OUT (orange) | Combined total of all money paid out |
+| **Total Balance** | — | Net balance for the day (Total IN minus Total OUT) |
+
+In the example shown:
+- Total IN: **LKR 6,000.00** (all cash)
+- Total OUT: **LKR 500.00** (cash deposit to bank)
+- **Total Balance: LKR 5,500.00**
+
+---
+
+## 7.6 Acvilas AI Analysis
+
+The **Acvilas AI** panel appears in the centre of the balance sheet. Click **Click to analyse** to get an AI-generated summary and insights on the day's financial activity for this POS terminal.
+
+---
+
+## 7.7 Transaction Filters
+
+Above the transaction list, three filter tools help you find specific entries:
+
+| Filter | Description |
+|---|---|
+| **Search by description** | Type to search for a specific transaction by its description |
+| **Show All** dropdown | Filter by transaction type (All, invoices only, cash movements only, etc.) |
+| **All Cash Types** dropdown | Filter by payment method (All Cash Types, Cash, Card, etc.) |
+
+Three highlighted totals appear to the right of the filters:
+- **Temp Invoice Total** — Total of temporary/unsettled invoices (shown in pink)
+- **Payments** — Total confirmed payments received (shown in pink)
+- **Balance** — Current running balance (shown in pink)
+
+---
+
+## 7.8 Transaction List
+
+The main table lists every transaction recorded through this POS on the selected date:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Description** | What the transaction was for (e.g., *Deposit bank*, *INV:18 – Mr. Layan*) |
+| **Time** | Exact timestamp of the transaction |
+| **POS Point** | The cashier terminal code (e.g., *POS0001*) |
+| **Operator** | The staff member who processed it (e.g., *ADMIN*) |
+| **Type** | Payment method used (e.g., *cash*) |
+| **Ref** | Reference number if applicable |
+| **IN** | Amount received in this transaction |
+| **OUT** | Amount paid out in this transaction |
+| **Total** | Running total for that entry (positive = money in, negative = money out) |
+
+In the example shown, three transactions are recorded for 2026-04-18:
+- *Deposit bank* — LKR 500.00 OUT (cash deposited to bank)
+- *INV:18 – Mr. Layan* — LKR 4,000.00 IN (invoice payment received)
+- *INV:17 – Mr. Layan* — LKR 2,000.00 IN (invoice payment received)
+
+---
+
+## 7.9 Recording Cash IN / OUT
+
+Click the **Cash IN / OUT** button (dark, top right) to manually record a cash movement that is not linked to a patient invoice. Common uses include:
+
+- **Opening float** — Recording the starting cash placed in the till at the start of a shift
+- **Bank deposit** — Recording cash removed from the till and deposited to the bank
+- **Petty cash** — Recording small cash payments for clinic expenses
+- **Cash refund** — Recording a cash refund given to a patient outside of the normal invoice process
+
+Enter the description, amount, direction (IN or OUT), and payment type, then save. The entry will appear in the transaction list and update the daily summary cards.
+
+---
+
+## 7.10 End-of-Day Cash Reconciliation
+
+At the end of each working day, the cashier or supervisor should:
+
+1. Open the **Balance Sheet** for the current date.
+2. Review the **Total IN**, **Total OUT**, and **Total Balance** summary cards.
+3. Count the physical cash in the till and compare it to the **Cash Total IN** minus any **Cash OUT** movements.
+4. If there is a discrepancy, review the transaction list to identify the source.
+5. Record any bank deposits using **Cash IN / OUT**.
+6. Click **Download CSV** to save a record of the day's transactions for accounting purposes.
+
+> **Tip:** Use the **Invoice Record** button to cross-reference all invoices processed through this POS against the balance sheet totals to ensure every payment is accounted for.
+
+
+---
+
+## Best Practices for Cashier Use
 
 - Always click **Refresh** at the start of your shift to ensure you are seeing the most current cashier list.
 - Use the **Balance Sheet** at the end of each day to verify that all transactions have been recorded correctly.
@@ -874,6 +988,134 @@ If your clinic has more than one billing counter (e.g., a front desk cashier and
 - Each transaction processed through the POS is automatically linked to the patient's invoice history, which can be reviewed in the **Customers** module.
 
 ---
+
+# Cashier — POS Screen
+
+The **POS (Point of Sale) Screen** is the main billing and payment interface used by cashier staff to process patient payments. It is accessed by clicking **Open POS** from the Cashier Points list.
+
+---
+
+## 7.11 POS Screen Overview
+
+The POS screen for terminal **POS0001** is a full billing workspace combining patient lookup, item billing, appointment management, and payment processing in one view.
+
+---
+
+## 7.12 Top Action Bar
+
+| Button | Colour | Description |
+|---|---|---|
+| **Appointment ID** field | — | Type an appointment ID and click **ADD Ap.** to load that appointment directly onto the bill |
+| **+ New Appointment** | Dark | Create a new appointment directly from the POS screen |
+| **Invoice Return** | Orange | Process a refund or return against a previously issued invoice |
+| **Invoice Record** | Blue | View all invoices processed through this POS terminal |
+| **Temp List** | Teal | View saved temporary (on-hold) bills |
+| **Save Temp.** | Green | Save the current bill as a temporary hold — useful when a patient needs to return later to pay |
+| **Submit Bill** | Grey (activates when ready) | Finalise and submit the bill to generate an invoice |
+| **Print** | Dark | Print the current bill or receipt |
+
+The top right also shows the currently loaded patient's **Name** and **Phone** for quick reference.
+
+---
+
+## 7.13 Customer Information Panel (Right Side)
+
+The right panel works identically to the OPD patient search:
+- Search by **Phone**, **User ID**, or **ID Scan**
+- Click **Add new** to register a new patient
+- Press **F8** or click **EMPTY CUSTOMER ENTRY** to clear the current patient
+- Once a patient is loaded, their **Name**, **Phone**, **Age**, and **City** are displayed
+- Multiple records sharing a phone appear as a numbered list — click the correct name to load
+
+---
+
+## 7.14 Bill Items Table
+
+The centre of the screen shows all items currently on the patient's bill:
+
+| Column | Description |
+|---|---|
+| **#** | Line item number |
+| **Item** | Type of charge — *Appointment*, *Service*, or *Product* |
+| **Detail** | Specific description (e.g., doctor name, service name, drug name) |
+| **Ref.** | Reference ID or code |
+| **Price** | Unit price of the item |
+| **Dis.** | Discount applied to this item |
+| **Total** | Final amount for this line |
+| **Option** | **Remove** — delete this line / **More** — view or edit additional details |
+
+In the example shown, the bill contains three line items:
+- **Appointment** with Test Doctor — LKR 2,000.00
+- **Service** — Abdominal Scan (CODE 123) assigned to Shashika Layan — LKR 2,000.00 (with a **Change** button to reassign the responsible person)
+- **Product** — Panadol with Dose, Days, Frequency, and Qty fields for prescription dispensing — LKR 3.00
+
+Use **Make template** below the items table to save this combination as a reusable billing template.
+Use **Clear All Items** (top right of items table) to remove everything and start fresh.
+
+---
+
+## 7.15 Bottom Tabs — Adding Items to Bill
+
+Below the items table, five tabs allow cashier staff to add items to the bill:
+
+### Appointments Tab
+Displays a **scrollable date bar** at the top showing recent and upcoming dates. Below it shows **Available Doctors and Appointment Charges** (e.g., *Test Doctor | 2000.00*) and a list of all appointments. The list shows ID, Doctor, C.Name, C.Phone, Date, Time, Status, Payment, Paid status, and an **Add** button to attach the appointment to the bill.
+
+### Services Tab
+Search for and add clinical services to the bill.
+
+### Consultation Tab
+Add consultation charges directly.
+
+### Templates Tab
+Load a previously saved billing template to quickly populate the bill with standard items.
+
+### Products Tab
+Search for and add pharmacy/stock products to the bill with dose, days, frequency, and quantity fields.
+
+---
+
+## 7.16 Payment Panel (Bottom Right)
+
+The payment section at the bottom of the right panel handles the financial settlement:
+
+| Element | Description |
+|---|---|
+| **Total Amount** | The total of all items on the bill (shown in blue, e.g., 4000.00) |
+| **Total Payment** | Amount paid so far (e.g., 0.00 if not yet paid) |
+| **Discount** | Discount field — enter a discount amount or select a promotion |
+| **Dr. / Bill Reference** | Optional field to enter a doctor reference or billing note |
+| **Card / Cash toggle** | Select the payment method — **Card** or **Cash** |
+| **Amount field (F4)** | Type the amount being tendered. Press **F4** to focus this field |
+| **Full button** | Click to auto-fill the exact total amount due |
+| **Remaining** | Shows the outstanding balance in red (e.g., *Remaining: 4000.00*) — updates as payments are entered |
+
+### Processing a Payment
+
+1. Load the patient using the Customer Information panel on the right.
+2. Add all billable items using the bottom tabs (Appointments, Services, Products, etc.).
+3. Verify the **Total Amount** shown in the payment panel.
+4. Apply any **Discount** or promotion if applicable.
+5. Select **Cash** or **Card** as the payment method.
+6. Enter the amount received in the **Amount field** or click **Full** to auto-fill.
+7. The **Remaining** balance updates in real time.
+8. Click **Submit Bill** (top right) to finalise the payment and generate the invoice.
+9. Click **Print** to print the receipt for the patient.
+
+---
+
+## 7.17 Temporary Bills (Save Temp)
+
+If a patient needs to be put on hold (e.g., they are waiting for a family member to pay, or they need to come back), click **Save Temp.** to save the current bill without generating an invoice. The bill can be retrieved later from **Temp List** and completed when the patient returns.
+
+---
+
+## 7.18 Invoice Return
+
+Click **Invoice Return** (orange button) to process a refund against a previously issued invoice. Enter the original invoice number, select the items being returned, and the system will generate a return/refund transaction that appears in the balance sheet as an OUT entry.
+
+---
+
 
 # Chapter 8: Service Task
 
@@ -2128,4 +2370,395 @@ Once a promotion is created and enabled, cashier staff can select it from the di
 > Only staff with the **Promotion Control** permission (configured in User Roles) will be able to apply promotions at the POS.
 
 ---
+# Chapter 12.7: Administration — Stock (Inventory Control)
+
+The **Stock** module is the pharmacy and product inventory management system within Acvilas. It allows administrators to add products, manage stock levels, track expiry dates, receive new stock via GRN records, and monitor low stock alerts. Access it from **Administration > Stock**.
+
+---
+
+## 12.7.1 Inventory Control Screen Overview
+
+The screen is titled **Inventory Control** and shows a live summary of all pharmacy/clinic products.
+
+At the top:
+- **1 Products** badge — Shows the total number of products in the inventory
+- **Refresh** — Reloads the inventory list
+- **New GRN** — Opens the Goods Received Note form to record new stock received
+- **GRN History** — Opens the history of all past GRN stock receipts
+- **+ New Product** — Opens the form to add a new product to the inventory
+
+### Acvilas AI Panel
+Click **Click to analyse** on the Acvilas AI panel to get an AI-generated analysis of your stock levels, expiry trends, and product performance.
+
+---
+
+## 12.7.2 Low Stock Alerts Panel
+
+On the left side of the screen, the **LOW STOCK ALERTS** section (marked with a red warning icon) highlights any products whose current stock has fallen below the configured minimum level.
+
+Each alert row shows:
+
+| Column | Description |
+|---|---|
+| **Product** | Product name and code |
+| **Stock** | Current stock quantity (negative values indicate oversold/deficit) |
+| **Status** | The minimum stock threshold (e.g., *Min: 10*) |
+| **Action** | Click **VIEW** to open the product record |
+
+Click **Download** to export the low stock alert list as a file.
+
+---
+
+## 12.7.3 Expiry Monitor Panel
+
+On the right side of the screen, the **EXPIRY MONITOR** section (marked with an hourglass icon) highlights products that have expired or are approaching their expiry date.
+
+Each row shows:
+
+| Column | Description |
+|---|---|
+| **Product** | Product name and code |
+| **Stock** | Current quantity remaining |
+| **Status** | Expiry status (e.g., *Expired 16d* — expired 16 days ago) |
+| **Action** | Click **VIEW** to open the product record |
+
+Click **Download** to export the expiry monitor list.
+
+---
+
+## 12.7.4 Product Inventory List
+
+Below the alert panels, the full product list shows all registered products. Use the **Search generic or brand** field to find a specific product. Use **Sort By** to change the list order.
+
+Each product row displays:
+
+| Column | Description |
+|---|---|
+| **Drug Information** | Generic name, brand name, and stock code |
+| **Pricing** | The selling price per unit (e.g., LKR 3.00) |
+| **Cost** | The purchase/cost price per unit (e.g., LKR 2.00) |
+| **Inventory** | Current stock count — shown as a coloured badge (red for negative/zero stock) |
+| **Valuation** | Total stock value (Quantity × Cost price) |
+| **Expire** | The product's expiry date — shown in red if expired or near expiry |
+| **Status** | **Enabled** (green) — available for dispensing / **Disabled** — removed from active use |
+| **Options** | **Edit Data** — modify the product / **Print Barcode** — print a label / **Delete** — remove the product |
+
+---
+
+## 12.7.5 Adding a New Product
+
+Click **+ New Product** (top right) to open the **Add New Product** form.
+
+Fill in all fields:
+
+| Field | Description |
+|---|---|
+| **Generic Name** | The generic/chemical name of the product (e.g., *Panadol*) |
+| **Code** | A unique stock code for this product (e.g., *PAN-01*) |
+| **Item Name** | The brand name as it appears on packaging (e.g., *PANADOL*) |
+| **Unit Price** | The selling price per unit charged to the patient |
+| **Unit Cost** | The purchase cost per unit paid to the supplier |
+| **Expire Date** | The product's expiry date in YYYY-MM-DD format |
+| **Quantity** | The initial stock quantity being added |
+| **Low Stock Alert** | The minimum quantity threshold — when stock drops below this number, the product appears in Low Stock Alerts (default: 10) |
+| **Expire Date Alert** | Number of days before expiry to trigger an expiry alert (default: 7 days) |
+
+Click **Add Product** (purple button) to save the new product.
+
+---
+
+## 12.7.6 Editing a Product
+
+Click **Edit Data** in the Options column to open the **Edit Product** form. All fields from the Add Product form are available for editing, plus:
+
+- **Status** dropdown — Set to *Enabled* or *Disabled* to control whether the product is available for dispensing
+- **Clone Product (Save as new)** — Click this blue button to duplicate the product as a new entry (useful for adding the same drug in a different batch, size, or expiry date)
+- **Update Product** — Click this purple button to save changes to the existing product
+
+---
+
+## 12.7.7 New GRN (Goods Received Note)
+
+A **GRN** is used to record new stock received from a supplier. This is the correct way to add incoming stock to the system rather than manually editing the quantity field.
+
+Click **New GRN** to open the **New GRN Record** form:
+
+1. **Notes field (top)** — Enter delivery details such as supplier name, delivery reference, number of boxes, or any remarks (e.g., *"from Test supplier, one box, text note"*)
+
+2. **Search field** — Search for the product being received by Generic Name, Drug Code, or Drug Name. The matching product will appear in the list below.
+
+3. **GRN Line Items table** — For each product in the delivery:
+
+| Column | Description |
+|---|---|
+| **#** | Row number |
+| **Generic Name** | The product's generic name |
+| **Drug Code** | The stock code |
+| **Drug Name** | The brand name |
+| **Price** | The unit price (auto-filled from product record) |
+| **Qty** | Enter the quantity received in this delivery |
+| **Expire** | Enter the expiry date for this batch of stock |
+| **Opt.** | Click the red **X** button to remove a line item |
+
+4. Click **Submit** (purple button, top right) to post the GRN and add the received quantities to the product's current stock balance.
+
+---
+
+## 12.7.8 GRN History
+
+Click **GRN History** to view a log of all past goods received records. This allows administrators to trace all stock intake transactions, verify deliveries, and audit inventory movements over time.
+
+---
+
+## 12.7.9 Printing a Product Barcode
+
+Click **Print Barcode** in the Options column next to any product to open the **BarcodePrint** popup.
+
+The popup offers two label types:
+- **Barcode** (selected by default) — Displays a standard linear barcode with the product code below it (e.g., *PAN-01*)
+- **QR Code** — Displays a QR code version of the product identifier
+
+Click **Print Barcode** (teal button) to send the label to your printer for attachment to product packaging or shelf labels.
+
+---
+
+## 12.7.10 Stock Management Best Practices
+
+- Always use **New GRN** to receive stock rather than manually editing quantities — this maintains a proper audit trail.
+- Set meaningful **Low Stock Alert** thresholds based on your clinic's usage rate to avoid running out of critical medications.
+- Set **Expire Date Alert** to at least 30 days for slow-moving items to allow enough time to use or return stock before it expires.
+- Review the **Expiry Monitor** and **Low Stock Alerts** panels daily as part of pharmacy management routine.
+- Use **Clone Product** when the same medication arrives in a new batch with a different expiry date, keeping each batch separately tracked.
+
+---
+
+# Chapter 12.8: Administration — Messaging
+
+The **Messaging** module is where all automated SMS notification templates are configured. Each template controls the text message sent to patients when a specific event occurs in the system. Access it from **Administration > Messaging**.
+
+---
+
+## 12.8.1 Messaging Screen Overview
+
+The screen is titled **Messaging** and displays a grid of 8 SMS template cards — one for each type of automated notification the system can send.
+
+At the top:
+- **Refresh** — Reloads the messaging templates
+- **Test Number +94712345** — A test phone number field (top right) where you can enter a number to send a test SMS and verify your templates are working correctly
+
+Each template card has:
+- A **title** identifying the trigger event
+- A **toggle switch** (top right of card) — green means the SMS is **enabled**, grey means **disabled**
+- A **text area** for the message content
+- A **Text Count** indicator showing how many characters are used (max 50 shown)
+- **Variable tags** (clickable badges) that insert dynamic data into the message
+- A **Save** button (purple) to save changes to that template
+
+---
+
+## 12.8.2 SMS Templates
+
+### Row 1 — Active Templates (Toggle ON)
+
+**1. Invoice Created**
+Triggered when a new invoice is generated for a patient.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$InvoiceID` — The invoice number
+- `$Total` — The total amount billed
+
+*Example use: "Welcome, $CustomerName! Your invoice #$InvoiceID for $Total has been created."*
+
+---
+
+**2. Appointment Created**
+Triggered when a new appointment is booked for a patient.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$DoctorName` — The assigned doctor's name
+- `$AppointmentDate` — The appointment date
+- `$AppointmentTime` — The appointment time
+
+*Example use: "Hello $CustomerName, your appointment with $DoctorName is confirmed for $AppointmentDate at $AppointmentTime."*
+
+---
+
+**3. Service Task Notification**
+Triggered when a service task is created or updated for a patient.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$InvoiceID` — The related invoice number
+- `$ServiceName` — The name of the service
+- `$Link` — A direct URL link to view the task/report
+
+*Example use: "Hello $CustomerName, your $ServiceName result is ready. View here: $Link"*
+
+---
+
+**4. Service Task (Privacy Concerns)**
+A separate template triggered for services marked as **Privacy Concerns = Yes** in the Services configuration. This allows a more discreet message to be sent for sensitive services.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$InvoiceID` — Invoice reference
+- `$ServiceName` — The service name
+
+---
+
+### Row 2 — Inactive Templates (Toggle OFF by default)
+
+**5. Appointment Date Change**
+Triggered when an appointment is rescheduled to a new date or time.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$DoctorName` — Doctor's name
+- `$NewDate` — The new appointment date
+- `$NewTime` — The new appointment time
+- `$OldDate` — The original date
+- `$OldTime` — The original time
+
+*Example use: "Hi $CustomerName, your appointment with $DoctorName has been moved from $OldDate $OldTime to $NewDate $NewTime."*
+
+---
+
+**6. Appointment Revisit Created**
+Triggered when a follow-up or revisit appointment is created for a patient.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$DoctorName` — Doctor's name
+- `$Date` — The revisit appointment date
+
+---
+
+**7. Appointment Notification**
+A general appointment reminder or notification SMS.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$DoctorName` — Doctor's name
+- `$Date` — Appointment date
+- `$Time` — Appointment time
+
+---
+
+**8. Doctor Arrived SMS**
+Triggered when the doctor's attendance is marked in the **Doctor's Register** — notifying waiting patients that the doctor has arrived.
+
+Available variables:
+- `$CustomerName` — Patient's name
+- `$DoctorName` — Doctor's name
+- `$Date` — The date
+- `$Time` — The arrival time
+- `$RoomNo` — The room number assigned to the doctor
+
+*Example use: "Hello $CustomerName, Dr. $DoctorName has arrived and is in Room $RoomNo. Please proceed to the clinic."*
+
+---
+
+## 12.8.3 Writing and Editing SMS Templates
+
+To customise any template:
+
+1. Click inside the **text area** of the template card you want to edit.
+2. Type your message. Keep it concise — the system shows a **Text Count** to monitor length.
+3. To insert a dynamic variable, click the relevant **variable badge** below the text area (e.g., click `$CustomerName`) — it will be inserted at the cursor position in the message.
+4. Toggle the switch at the top right of the card to **enable** (green) or **disable** (grey) the SMS for that event.
+5. Click **Save** (purple button) to save the template.
+
+---
+
+## 12.8.4 Variable Reference Table
+
+| Variable | Replaced With |
+|---|---|
+| `$CustomerName` | The patient's registered name |
+| `$InvoiceID` | The invoice reference number |
+| `$Total` | The billed amount |
+| `$DoctorName` | The assigned doctor's name |
+| `$AppointmentDate` | The appointment date |
+| `$AppointmentTime` | The appointment time |
+| `$ServiceName` | The name of the clinical service |
+| `$Link` | A URL link to the patient's report or task |
+| `$NewDate` / `$OldDate` | New and original appointment dates |
+| `$NewTime` / `$OldTime` | New and original appointment times |
+| `$Date` | A general event date |
+| `$Time` | A general event time |
+| `$RoomNo` | The doctor's assigned room number |
+
+---
+
+## 12.8.5 Testing SMS Templates
+
+Before going live, always test your SMS templates:
+
+1. Enter a valid mobile number in the **Test Number** field at the top right of the Messaging screen.
+2. Trigger a relevant event in the system (e.g., create a test appointment or invoice).
+3. Verify that the SMS is received with the correct content and all variables are replaced correctly.
+
+> **Tip:** Keep SMS messages short and clear. Patients may receive these on any mobile device, so avoid technical jargon. Always include the clinic name or doctor name so patients immediately recognise the sender.
+
+---
+
+# Chapter 12.9: Administration — Bulk Actions
+
+The **Bulk Actions** module allows administrators to perform mass system-wide operations on records across a selected date range. These are powerful tools designed to clean up or update large volumes of data in a single action. Access it from **Administration > Bulk Actions** (systemBulkAction).
+
+---
+
+## 12.9.1 Bulk Actions Screen Overview
+
+The screen is titled **System Bulk Actions** and displays a critical warning at the top:
+
+> ⚠️ **"This action will affect all system data. Once executed, the changes cannot be undone."**
+
+This warning must be taken seriously. Bulk actions make permanent, irreversible changes to the database. Always double-check the date range and the action before clicking Execute.
+
+---
+
+## 12.9.2 Available Bulk Actions
+
+### Waiting Appointments → Complete
+
+This is the currently available bulk action. It mass-updates all appointments that are still in **Waiting** status within a specified date range, changing them all to **Complete** status in a single operation.
+
+**When to use this:**
+- At the end of a day or week when many appointments remain in "Waiting" status because staff forgot to manually mark them as complete
+- During system cleanup or data reconciliation periods
+- When closing out a past period and ensuring all appointment records are properly finalised
+
+**How to execute:**
+
+1. Set the **Start Date** (left date picker) — enter the beginning of the date range in YYYY-MM-DD format
+2. Set the **End Date** (right date picker) — enter the end of the date range
+3. Click the **Execute** button (purple, far right) to run the bulk action
+
+The system will then update all appointments with a *Waiting* status that fall within the selected date range, changing them all to *Complete*.
+
+---
+
+## 12.9.3 Critical Warnings and Best Practices
+
+> ⚠️ **This action cannot be undone.** Once you click Execute, all affected appointments are permanently marked as Complete. There is no undo or rollback option.
+
+Before executing any bulk action, always:
+
+- **Verify the date range carefully** — an incorrect date range could mark future or unintended appointments as complete
+- **Run during off-peak hours** — execute bulk actions when the clinic is not actively seeing patients to avoid conflicts with live data
+- **Confirm with your team** — ensure all relevant staff (doctors, receptionists) are aware the bulk action is being run, especially if it affects today's records
+- **Export a report first** — before running a bulk action, download a CSV of the affected appointments from the **Appointment Report** (Reports module) so you have a record of what was in Waiting status before the change
+- **Only Administrators should have access** to this module — ensure the Bulk Actions permission is restricted in User Roles
+
+---
+
+## 12.9.4 Why Bulk Actions Are Needed
+
+In a busy clinic, it is common for some appointments to remain in *Waiting* status at the end of a day if the consultation was completed but the record was not manually closed. Over time, these accumulate and distort the Dashboard counters and Appointment Reports. The Bulk Actions tool provides a quick and controlled way to clean up these records across a defined historical period.
+
+---
+
 
