@@ -2761,4 +2761,154 @@ In a busy clinic, it is common for some appointments to remain in *Waiting* stat
 
 ---
 
+# Chapter 12.10: Administration — Laboratory
+
+The **Laboratory** module is where all lab test report templates and result parameters are configured. This powers the structured lab reporting system used in the Service Task module when lab technicians record and deliver test results. Access it from **Administration > Laboratory**.
+
+---
+
+## 12.10.1 Laboratory Reports Screen Overview
+
+The screen is titled **Laboratory Reports** with the subtitle *"Manage and configure lab test templates."*
+
+At the top:
+- **Search** — Search by name, code, or description
+- **Refresh** — Reloads the list
+- **Result Parameters** — Opens the global parameters library (measurement units and LOINC codes)
+- **+ Add Test** — Creates a new lab report template
+
+### Lab Reports List Columns
+
+| Column | Description |
+|---|---|
+| **ID** | Unique system ID for the report template |
+| **Code** | A short code badge identifying the report (e.g., *ABC*, *a1*, *ac2*, *Test 3 report*) |
+| **Report Name** | The full name of the lab test (e.g., *FBC*, *a4*, *b3*, *testing*) |
+| **Description** | A brief description of what the test measures |
+| **Created** | Date and time the template was created |
+| **Actions** | 👁️ View (eye icon) — preview the template / ✏️ Edit (pencil icon) — modify the template |
+
+A footer shows the total count (e.g., *Showing 4 reports*) and the current date.
+
+---
+
+## 12.10.2 Adding a New Lab Test Template
+
+Click **+ Add Test** (top right) to open the **Add New Test** form.
+
+All three fields are required (marked with *):
+
+| Field | Description |
+|---|---|
+| **Report Code** ✱ | A unique code for this report type (e.g., *CBC001*, *HBA1C*, *FBC*). Must be unique across all reports. |
+| **Report Name** ✱ | The full display name of the lab test (e.g., *Complete Blood Count*, *Full Blood Count*) |
+| **Description** ✱ | A brief explanation of what this test measures (e.g., *Measures red and white blood cells and platelets*) |
+
+Click **Submit** to create the template. The new report will appear in the list and can then be configured with parameters and reference ranges.
+
+---
+
+## 12.10.3 Result Parameters (Global Parameter Library)
+
+Click **Result Parameters** (top right of the Laboratory Reports screen) to open the **Result Parameters** screen. This is a global library of all measurable parameters that can be included in any lab report template.
+
+The screen is titled **Result Parameters** with subtitle *"Manage laboratory parameters."*
+
+At the top:
+- **Search** — Search by name, unit, or LOINC code
+- **Refresh** — Reloads the list
+- **+ Add Parameter** — Opens a form to add a new parameter to the global library
+
+### Parameters List Columns
+
+| Column | Description |
+|---|---|
+| **ID** | System ID |
+| **Parameter Name** | The name of the measurable value (e.g., *Hemoglobin*, *WBC*, *WBC2*, *WBC23*) |
+| **Unit** | The unit of measurement displayed as a badge (e.g., *g/dL*, *d/dL*, *d/dL2*) |
+| **LOINC Code** | The international LOINC standardisation code for this parameter (e.g., *7188*, *7588*). A dash (—) indicates no LOINC code has been assigned. |
+| **Actions** | ✏️ Edit (pencil icon) — modify the parameter's name, unit, or LOINC code |
+
+> **LOINC codes** are internationally standardised codes used to identify medical laboratory observations. Assigning correct LOINC codes allows for data interoperability with other health systems and standards.
+
+---
+
+## 12.10.4 Lab Report Template Builder
+
+Click the **edit (pencil)** icon or **view (eye)** icon on any report in the Laboratory Reports list to open the **Lab Report Template** builder screen.
+
+The breadcrumb shows the path: *Administration > LaboratoryAdministration > [Report ID]*
+
+At the top of the screen, the report details are shown as tags: **Report Code** | **Report Name** | **Description**
+
+### Left Panel — Parameters List
+
+The left panel shows all parameters currently assigned to this report template, each displayed as a card showing:
+- Parameter name (e.g., *WBC23*, *Hemoglobin*)
+- Unit and LOINC code
+- Number of reference ranges configured (e.g., *1 range*, *2 ranges*)
+
+Click **+ Add** at the top of the left panel to add more parameters to this template (see Section 12.10.5).
+
+Click any parameter card to select it and view/edit its reference ranges in the right panel.
+
+### Right Panel — Reference Ranges
+
+When a parameter is selected, the right panel shows its configured reference ranges. Click **+ Add Range** (top right) to add a new range.
+
+Each range entry shows:
+
+| Field | Description |
+|---|---|
+| **Test Method** | The analytical method used (e.g., *Colorimetric*) |
+| **Gender** | The gender this range applies to — *Male*, *Female*, or *Any* |
+| **Min Age** | Minimum age for this range to apply |
+| **Max Age** | Maximum age for this range to apply |
+| **Min Value** | The lower boundary of the normal reference range |
+| **Max Value** | The upper boundary of the normal reference range |
+| **Display Order** | The order in which this range appears on the printed report |
+| **Reference Text** | A descriptive label for this range (e.g., *Normal*, *High*, *Low*) |
+
+Filter buttons at the top of the range panel allow you to view ranges by: **All**, **Any**, **Male**, **Female**, and by **Age range** or **Test Method**.
+
+Click **Edit** to modify an existing range or **Delete** to remove it.
+
+> This range system allows the same parameter (e.g., Hemoglobin) to have different normal values for males vs females, and for different age groups — which is clinically important for accurate reporting.
+
+---
+
+## 12.10.5 Adding Parameters to a Report Template
+
+From within the Lab Report Template builder, click **+ Add** in the left panel to open the **Add New Parameter** popup.
+
+This popup shows the full list of all parameters from the global Result Parameters library:
+- **WBC23** — LOINC: 7588 — unit: d/dL
+- **WBC** — LOINC: 7188 — unit: d/dL
+- **WBC2** — LOINC: 7188 — unit: d/dL2
+- **Hemoglobin** — unit: g/dL
+
+Use the **Search by name or LOINC code** field to find a specific parameter quickly.
+
+To add a parameter:
+1. Click on the parameter row to select it (it will highlight).
+2. Click **+ Submit** (teal button, bottom right) to add it to the report template.
+3. The parameter will appear in the left panel of the template builder.
+4. You can then configure its reference ranges in the right panel.
+
+Click **Cancel** to close without adding.
+
+---
+
+## 12.10.6 How Laboratory Templates Work in the System
+
+Once lab report templates are configured here, they become available in the **Service Task** module. When a lab technician opens a task and clicks **+ Create New** in the Lab Reports section:
+
+1. They select the appropriate report template (e.g., *FBC*)
+2. The system loads all the parameters configured for that template
+3. The technician enters the patient's actual result values
+4. The system compares values against the configured reference ranges
+5. A completed lab report is generated and made available to the patient via the shareable link (URL) and viewable by the doctor in the patient's record
+
+---
+
 
